@@ -16,7 +16,7 @@ There are many risks present with any kind of project, I will be identifying the
 ----------------------------------------------------------------------------------------------------------
 Risks                           Impact level   Reaction                                                 
 ------------------------------- -------------- ---------------------------------------------------------
-Sickness                        Low            Avoid getting ill.        I                              
+Sickness                        Low            Avoid getting ill.                               
 
 Data loss                       Low            Mitigate risk with multiple backups and version control. 
 

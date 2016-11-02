@@ -25,6 +25,8 @@ I do not have a client that I am developing my application for and so do not hav
 
 - Anyone that uses an alarm - The largest stakeholder I have is anyone that uses an alarm, many use the alarm that comes on their phone and others use stand-alone alarm clocks. By investigating the most popular alarms used by people I will be able to get vital information on what makes for a good alarm and what I should avoid.
 
+INSERT ONION MODEL HERE
+
 ## Communications
 
 I will maintain contact with my project supervisor with monthly meetings where I intend to measure my progress against deadlines and goals, reflect on what progress has been made and address issues, challenges and for development advice to assist me successfully complete my project as planned.
