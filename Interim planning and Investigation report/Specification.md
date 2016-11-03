@@ -1,13 +1,48 @@
 # Specification 
 
 ## Deliverables
-- activities must be associated with products
-- products may be intermediate or end deliverables
-- products may be technical, management or quality
-- products will form a hierarchy – some MUST be accomplished before others can be undertaken
+
+My project has multiple deliverables that I will assign a level of priority to using the must, should, could concept. 
+
+The deliverables for my project will be as follows;
+
+------------------------------------------------------------------------------------------------------------
+Activity					Priority	Deliverable
+--------------------------- ---------   ---------------------------------------------------------------------------
+Writing final report		Must		The final report for the project is crucial and will be undertaken through out the development of my application.
+
+Developing a basic alarm	Must		The application, an alarm app is what my project is based upon and so I will need to develop this before I can develop any further.
+
+Developing a better alarm	Should		The application, a basic alarm will work but I would like this to be an alarm app that has all the features found in any alarm app such as repeat alarms, multiple alarms, etc...
+
+Smartbulb integration		Must		The application, the Smartbulb integration is a main bases of my project and so I will need to include this into my application.
+
+Develop for smartbulbs		Should		The practicality of demonstrating smartbulb integration could be a challenge, by setting up a test platform using an Arduino or raspberry pi would allow me more control than external APIs.
+
+Calendar Integration		Should		The application would be improved with calendar integration providing an agenda for the user in the morning.
+
+Text to speech				Could		The application, text to speech is a part of the Android platform and can be used relatively easy and so doesn't contain much of a challenge to it's implementation.
+
+------------------------------------------------------------------------------------------------------------
 
 ### Stages
-- A schedule of activites
+
+It would be naïve for me to provide a detailed schedule of the activites and stages for my project, however I can identify what I will need to do and in which order as well as estimate a time frame for when I intend to begin the activity.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Activity				Time Frame
+--------------------    -------------------------------------------------------------------------------------------
+Writing the report		Writing the report will be on going throughout the development of my application to allow me to assess my work, identify my challanges and to provide the technical research I undertake.
+
+Design					First week will be spent on this. I don't intend to spend much time of the visual design of my application as it should be fairly simple and can be modified easily.
+
+Prototypes				Will occur prior to new visual changes to my application. I will provide a dummy function to the visual elements that involve interactions to test the look and feel before implementing fully.
+
+Basic Alarm				First four weeks, the basic alarm will be the foundation of my application and as such will need to be developed well using the principles I have learnt. 
+
+A test platform 		Two weeks following the alarm development, this will take some time to develop  
+
+--------------
 
 ### Risk Analysis
 
@@ -25,30 +60,6 @@ Project complexity              Medium         Avoid making it too complex, or t
 Scope creep                     Low            Avoid implementing features not outlined.                
 
 Communication with supervisor   Low            Mitigate by keeping in regular contact.                  
-
-Learning curve                  Medium         Mitigation by working with what I know                  
 ----------------------------------------------------------------------------------------------------------
 
 Table: List of risks.
-
-##### Sickness
-Besides avoiding getting colds and flu which pose little risk to the project, the only other form of impact would be broken bones etc.. This would impact my learning however I would continue
-
-##### Data Loss
-I have my data backed up on two devices, a local NAS and the online service MEGA sync \cite{mega} 
-
-##### Project complexity
-My project has been agreed by my supervisor and so I believe it is neither too complex or too simple for the grade I would like to obtain. I feel I have made my project achievable and would like to add more functionality as time permitted.
-
-##### Scope Creep
-It is very possible for scope creep to occur with my project however I will be ensuring I complete all the features and functionality outlined within my project proposal before attempting to expand/improve upon the application to ensure I have a fully working project.
-
-##### Communication
-By keeping in regular contact with my superviosr I intend to be able to get regular feedback on my performance and assistance if I need help. Lack of communication could easily lead to a gap in what I produce and the expectations of my supervisor and could negatively impact my final grade.
-
-##### Learning Curve
-I will be devoloping in the Java language and for a device that I am familiar with. Although it can be tempting to work on a project in a new language or try to implement too many features in an attempt to gain a high mark, I feel it is more important to finalise the application and have a fully working demonstration for submission.
-
-
-
-
