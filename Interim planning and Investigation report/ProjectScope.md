@@ -15,15 +15,15 @@ My aims are:
 
 ## Stakeholders
 
-I do not have a client that I am developing my application for and so do not have a pre-defined user base or stakeholders however, I have identified the following stakeholders:
+I have identified the following stakeholders:
 
 - Myself - Not only am I developing the application making me a stakeholder, I am also very interested in home automation and waking up happy. 
 
-- My supervisor, Marcus Winter - By accepting to be my supervisor Marcus is also a stakeholder for my application, he will be providing feedback and assistance through out development and will ultimately be grading me on my efforts. 
+- My supervisor, Marcus Winter - By accepting to be my supervisor Marcus is also a stakeholder for my application.
 
 - An expanding user base of smartbulbs - Although the market currently is small the cost of smartbulbs is decreasing making them more available to users.
 
-- Anyone that uses an alarm - The largest stakeholder I have is anyone that uses an alarm, many use the alarm that comes on their phone and others use stand-alone alarm clocks. By investigating the most popular alarms used by people I will be able to get vital information on what makes for a good alarm and what I should avoid.
+- Anyone that uses an alarm - The largest stakeholder I have is anyone that uses an alarm.
 
 ## Communications
 
@@ -35,7 +35,7 @@ Regular emails will also be used between meetings to keep in contact and keep my
 
 By developing for Android I will be able to make the app installation process very simple by publishing it to the Play store. To install an app from the Play store you can simply select the option to install the app and it will be downloaded and installed seamlessly.
 
-I will be ensuring to develop to a high standard and ensure there are no issues, bugs or flaws with my application. By developing for the KitKat version I will be able to support over an 80% market share. \cite{androidversion} 
+I will be ensuring to develop to a high standard and ensure there are no issues, bugs or flaws with my application.
 
 ## Quality checks
 
