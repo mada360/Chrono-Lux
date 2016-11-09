@@ -27,12 +27,12 @@ Text to speech				Could		The application, text to speech is a part of the Androi
 
 ### Stages
 
-It would be naïve for me to provide a detailed schedule of the activites and stages for my project, however I can identify what I will need to do and in which order as well as estimate a time frame for when I intend to begin the activity.
+It would be naïve for me to provide a detailed schedule of the activities and stages for my project, however I can identify what I will need to do and in which order as well as estimate a time frame for when I intend to begin the activity.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Activity				Time Frame
 --------------------    -------------------------------------------------------------------------------------------
-Writing the report		Writing the report will be on going throughout the development of my application to allow me to assess my work, identify my challanges and to provide the technical research I undertake.
+Writing the report		Writing the report will be on going throughout the development of my application to allow me to assess my work, identify my challenges and to provide the technical research I undertake.
 
 Design					First week will be spent on this. I don't intend to spend much time of the visual design of my application as it should be fairly simple and can be modified easily.
 
