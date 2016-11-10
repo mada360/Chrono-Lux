@@ -21,9 +21,12 @@ I have identified the following stakeholders:
 
 - My supervisor, Marcus Winter - By accepting to be my supervisor Marcus is also a stakeholder for my application.
 
+- The second reader - Will also be involved and will be grading my project.
+
 - An expanding user base of smartbulbs - Although the market currently is small the cost of smartbulbs is decreasing making them more available to users.
 
-- Anyone that uses an alarm - The largest stakeholder I have is anyone that uses an alarm.
+- Anyone that uses an alarm - The largest stakeholder I have is anyone that uses an alarm on the
+  Android platform. More specifically those who own smartbulbs or other connected devices.
 
 ## Communications
 
@@ -33,7 +36,7 @@ Regular emails will also be used between meetings to keep in contact and keep my
 
 ## Installation Process
 
-By developing for Android I will be able to make the app installation process very simple by publishing it to the Play store. To install an app from the Play store you can simply select the option to install the app and it will be downloaded and installed seamlessly.
+I would like to publish my application to the Play store once developed to a satisfactory level. To install an app from the Play store you can simply select the option to install the app and it will be downloaded and installed seamlessly.
 
 I will be ensuring to develop to a high standard and ensure there are no issues, bugs or flaws with my application.
 
