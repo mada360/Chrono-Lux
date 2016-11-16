@@ -37,3 +37,12 @@ Evaluating at the end of the time frame can show struggles in the development pr
 ## Choice of methodology
 
 After assessing the various forms of project methodologies I have decided to use an agile methodology most notably the Lean methodology as this will provide me the ability to develop core functionality in a fast pace and add other features time permitting. To assist my development I will also be using time boxing to allocate time for my applications functions and allow me to perform regular performance reviews so I can identify time sinks and other issues to allow me to manage them.
+
+
+## Project Time line
+\begin{landscape}
+\begin{figure}[htbp]
+\includegraphics{Images/gantt.png}
+\caption{Project Gantt Chart}
+\end{figure}
+\end{landscape}

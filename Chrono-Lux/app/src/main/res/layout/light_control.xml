@@ -11,55 +11,46 @@
     tools:context="chrono_lux.chrono_lux.MainActivity">
 
 
+    <TextView
+        android:text="Select Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/selectLight" />
+
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/selectLight"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp"
         android:id="@+id/spinner" />
 
-    <TextView
+    <ToggleButton
+        android:text="On/Off"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner"
-
-        android:text="Use this to control the lights in your house." />
-
-    <Button
-        android:text="Turn On"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:id="@+id/activate"
-        android:layout_marginStart="40dp"
-        android:layout_below="@+id/timePicker"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="Turn Off"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/activate"
-        android:layout_toEndOf="@+id/activate"
-        android:layout_marginStart="60dp"
-        android:id="@+id/off" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp"
+        android:id="@+id/toggleLight" />
 
     <SeekBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:max="10"
-        android:id="@+id/seekBar"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/toggleLight"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="72dp"
+        android:id="@+id/seekBar" />
+
+    <TextView
         android:text="Set Intensity"
-        android:id="@+id/textView"
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/activate"
-        android:layout_alignParentStart="true" />
-
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toggleLight"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp"
+        android:id="@+id/lightIntensity" />
 
 </RelativeLayout>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Chrono-Lux</string>
+    <string name="controlLightsMessage">Use this to control the lights in your house.</string>
+    <string name="turn_on">Turn On</string>
+    <string name="turn_off">Turn Off</string>
+    <string name="set_intensity">Set Intensity</string>
+    <string name="textview">TextView</string>
 </resources>

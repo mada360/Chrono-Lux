@@ -57,3 +57,13 @@ My key performance indicators are outlined below:
 - Text to speech (Stretch)
 
 If I am unable to produce a working alarm app with smartbulb functionality I will have failed to achieve what I intended to develop and so these are my highest priority.
+
+## Challenges
+
+There are many challenges I will face during my project these include the following:
+
+- Making my application extensible to other home automation systems such as the \cite{belkinwemo}. This would allow for greater flexibility and a larger target audience.
+
+- Handling various devices, there are now many various appliances that are connected to home automation, from washing machines and fridges to door locks and CCTV. Many devices could be useful for morning and night automation, such as closing the curtains at night or turning the kettle on in the morning. Each of these devices will have different functions and are very different from one another. To be able to add several and include them within a scene/scenario to perform multiple actions would be a very powerful inclusion within the app.
+
+- Providing a good level of home automation without making the app cumbersome or difficult to use. My target audience is average users who would like to wake up easier and more refreshed and have their days information available straight away. They don't want to spend ages setting up the light bulbs or struggling to find settings as they will get fed up and stop using and potentially uninstall the app.
