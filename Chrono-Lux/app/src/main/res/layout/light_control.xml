@@ -8,11 +8,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="chrono_lux.chrono_lux.MainActivity">
+    tools:context="chrono_lux.chrono_lux.LightControl">
 
 
     <TextView
-        android:text="Select Light"
+        android:text="@string/select_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -27,30 +27,33 @@
         android:layout_marginTop="13dp"
         android:id="@+id/spinner" />
 
-    <ToggleButton
-        android:text="On/Off"
+
+
+    <TextView
+        android:text="@string/set_intensity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner"
+        android:layout_below="@+id/powerSwitch"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp"
-        android:id="@+id/toggleLight" />
+        android:layout_marginTop="26dp"
+        android:id="@+id/lightIntensity" />
+
+    <Switch
+        android:text="@string/powerSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:id="@+id/powerSwitch"
+        android:switchPadding="15dp" />
 
     <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toggleLight"
+        android:layout_below="@+id/powerSwitch"
         android:layout_alignParentStart="true"
         android:layout_marginTop="72dp"
         android:id="@+id/seekBar" />
-
-    <TextView
-        android:text="Set Intensity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toggleLight"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp"
-        android:id="@+id/lightIntensity" />
 
 </RelativeLayout>

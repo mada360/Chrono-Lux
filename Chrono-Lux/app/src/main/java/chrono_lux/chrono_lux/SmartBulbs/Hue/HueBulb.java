@@ -1,7 +1,4 @@
-package chrono_lux.chrono_lux;
-
-import android.content.Context;
-import android.widget.Toast;
+package chrono_lux.chrono_lux.smartbulbs.hue;
 
 import android.util.Log;
 
@@ -112,6 +109,7 @@ public class HueBulb {
             brightness = setHue;
         } else {
             // Should never be called as user will only be able to use slider to adjust this.
+            Log.i(TAG, "invalid hue");
         }
         hue = setHue;
     }

@@ -40,6 +40,9 @@ After assessing the various forms of project methodologies I have decided to use
 
 
 ## Project Time line
+
+Below is a gantt chart of the overall plan for my project. A gantt chart doesn't suit my development methodology very well and so is fairly high-level overview.
+
 \begin{landscape}
 \begin{figure}[htbp]
 \includegraphics{Images/gantt.png}
