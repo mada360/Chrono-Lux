@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Chrono-Lux.iml" filepath="$PROJECT_DIR$/Chrono-Lux.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lightswitch/lightswitch.iml" filepath="$PROJECT_DIR$/lightswitch/lightswitch.iml" />
     </modules>
   </component>
 </project>
