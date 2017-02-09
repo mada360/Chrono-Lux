@@ -7,7 +7,7 @@ What I will be developing over the upcoming months is an app to help users get o
 My aims are:
 
 - Produce an alarm app with all the functionality users are used to.
-- Integrate Smartbulb functionality into the app to turn the light on in the morning with the alarm.
+- Integrate Smart bulb functionality into the app to turn the light on in the morning with the alarm.
 - To turn off the lights at night without having to get out of bed.
 - Provide weather information for the day.
 - Inform the user of their schedule for the day and upcoming events.
@@ -23,10 +23,10 @@ I have identified the following stakeholders:
 
 - The second reader - Will also be involved and will be grading my project.
 
-- An expanding user base of smartbulbs - Although the market currently is small the cost of smartbulbs is decreasing making them more available to users.
+- An expanding user base of smart bulbs - Although the market currently is small the cost of smart bulbs is decreasing making them more available to users.
 
 - Anyone that uses an alarm - The largest stakeholder I have is anyone that uses an alarm on the
-  Android platform. More specifically those who own smartbulbs or other connected devices.
+  Android platform. More specifically those who own smart bulbs or other connected devices.
 
 ## Communications
 
@@ -51,12 +51,12 @@ I will develop a test plan as I continue to develop my application to allow me t
 My key performance indicators are outlined below:
 
 - Alarm functionality
-- Smartbulb integration
+- Smart bulb integration
 - Weather functionality
 - Calendar Integration (Stretch)
 - Text to speech (Stretch)
 
-If I am unable to produce a working alarm app with smartbulb functionality I will have failed to achieve what I intended to develop and so these are my highest priority.
+If I am unable to produce a working alarm app with smart bulb functionality I will have failed to achieve what I intended to develop and so these are my highest priority.
 
 ## Challenges
 

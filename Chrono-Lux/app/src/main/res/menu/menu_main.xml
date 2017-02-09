@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.adam.chrono_lux.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="Action Settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/add_hub"
+        android:orderInCategory="100"
+        android:title="Hub Set-Up"
+        app:showAsAction="ifRoom"
+        android:onClick="SetupHub"/>
+</menu>

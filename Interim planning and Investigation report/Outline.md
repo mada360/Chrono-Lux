@@ -36,7 +36,7 @@ I# Learning Objectives
 # How to show work ethic
 
 - Keep a work log.
-- Using version control (GitHub) to show work and progress.
+- Using version control (Git Hub) to show work and progress.
 - End report.
 
 # Showing results

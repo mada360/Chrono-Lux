@@ -9,7 +9,7 @@
 #
 # By default this will keep the original .md file
 
-for f in *.md; do aspell check $f; done
+for f in *.md; do aspell -l en_GB --mode=tex check $f; done
 
 FILES=*.md
 for f in $FILES

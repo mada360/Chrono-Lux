@@ -15,9 +15,9 @@ Developing a basic alarm	Must		The application, an alarm app is what my project 
 
 Developing a better alarm	Should		The application, a basic alarm will work but I would like this to be an alarm app that has all the features found in any alarm app such as repeat alarms, multiple alarms, etc...
 
-Smartbulb integration		Must		The application, the Smartbulb integration is a main bases of my project and so I will need to include this into my application.
+Smart bulb integration		Must		The application, the Smart bulb integration is a main bases of my project and so I will need to include this into my application.
 
-Develop for smartbulbs		Should		The practicality of demonstrating smartbulb integration could be a challenge, by setting up a test platform using an Arduino or raspberry pi would allow me more control than external APIs.
+Develop for smart bulbs		Should		The practicality of demonstrating smart bulb integration could be a challenge, by setting up a test platform using an Arduino or raspberry pi would allow me more control than external APIs.
 
 Calendar Integration		Should		The application would be improved with calendar integration providing an agenda for the user in the morning.
 
