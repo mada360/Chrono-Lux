@@ -5,13 +5,14 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="Action Settings"
-        app:showAsAction="never" />
+        android:title="@string/action_settings"
+        app:showAsAction="never"
+        android:onClick="settings"/>
 
     <item
         android:id="@+id/add_hub"
         android:orderInCategory="100"
-        android:title="Hub Set-Up"
+        android:title="@string/hub_set_up"
         app:showAsAction="ifRoom"
         android:onClick="SetupHub"/>
 </menu>

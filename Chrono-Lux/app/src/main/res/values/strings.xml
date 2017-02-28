@@ -8,4 +8,20 @@
     <string name="page3">page3</string>
     <string name="this_is_the_hub">This is the Hub Setup page</string>
     <string name="alarm_title">Alarm</string>
+    <string name="title_error">Error</string>
+    <string name="txt_click_random_button">Random</string>
+    <string name="btn_random">Random Btn</string>
+    <string name="press_pushlink_button">Press the button</string>
+    <string name="txt_pushlink">Pushlink</string>
+    <string name="btn_ok">OK</string>
+    <string name="txt_select_smartbridge">Select smartbridge</string>
+    <string name="no_bridge">No bridge found</string>
+    <string name="txt_selectbridges">Select bridge</string>
+    <string name="connecting">Connecting</string>
+    <string name="menu_find_bridge">Find Bridge</string>
+    <string name="search_progress">Searching for Hub</string>
+    <string name="hub_set_up">Hub Set-Up</string>
+    <string name="action_settings">Action Settings</string>
+    <string name="add_alarm">Add Alarm</string>
+    <string name="this_is_how_many">This is how many</string>
 </resources>
