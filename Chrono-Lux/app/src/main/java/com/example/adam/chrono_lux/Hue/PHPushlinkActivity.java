@@ -1,4 +1,4 @@
-package com.example.adam.chrono_lux.Hue;
+package com.example.adam.chrono_lux.hue;
 
 import java.util.List;
 

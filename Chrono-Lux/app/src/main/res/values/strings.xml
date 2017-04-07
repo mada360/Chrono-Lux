@@ -16,7 +16,7 @@
     <string name="btn_ok">OK</string>
     <string name="txt_select_smartbridge">Select smartbridge</string>
     <string name="no_bridge">No bridge found</string>
-    <string name="txt_selectbridges">Select bridge</string>
+    <string name="txt_select_bridges">Select bridge</string>
     <string name="connecting">Connecting</string>
     <string name="menu_find_bridge">Find Bridge</string>
     <string name="search_progress">Searching for Hub</string>
@@ -24,4 +24,6 @@
     <string name="action_settings">Action Settings</string>
     <string name="add_alarm">Add Alarm</string>
     <string name="this_is_how_many">This is how many</string>
+    <string name="off_txt">OFF</string>
+    <string name="on_txt">ON</string>
 </resources>

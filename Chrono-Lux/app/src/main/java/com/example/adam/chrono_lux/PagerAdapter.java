@@ -4,7 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.adam.chrono_lux.Alarm.AlarmFragment;
+import com.example.adam.chrono_lux.alarm.AlarmFragment;
+import com.example.adam.chrono_lux.test.TestFragment;
 
 /**
  * Created by Adam on 28/02/2017.
@@ -25,7 +26,7 @@ public class PagerAdapter extends FragmentPagerAdapter { int mNumOfTabs;
                 AlarmFragment alarmTab = new AlarmFragment();
                 return alarmTab;
             case 1:
-                AlarmFragment tab2 = new AlarmFragment();
+                TestFragment tab2 = new TestFragment();
                 return tab2;
             case 2:
                 AlarmFragment tab3 = new AlarmFragment();

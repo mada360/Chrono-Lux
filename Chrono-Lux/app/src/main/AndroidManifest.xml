@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.adam.chrono_lux">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="true">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
+                <data android:scheme="https"
+                    android:host="www.aworley.uk"
+                    android:pathPrefix="/@string/app_name" />
+                <!-- note that the leading "/" is required for pathPrefix-->
+                <!-- Accepts URIs that begin with "example://gizmos”
+                <data android:scheme="example"
+                      android:host="gizmos" />
+                -->
             </intent-filter>
         </activity>
 
         <activity android:name=".MyApplicationActivity"
-            android:label="@string/txt_selectbridges" />
-        <activity android:name=".Hue.PHPushlinkActivity"
+            android:label="@string/txt_select_bridges" />
+        <activity android:name=".hue.PHPushlinkActivity"
             android:label="@string/app_name"/>
-        <activity android:name=".Hue.PHHomeActivity"
+        <activity android:name=".hue.PHHomeActivity"
             android:label="@string/app_name"/>
-        <activity android:name=".Hue.PHHubSetup"
+        <activity android:name=".test.BasicIntent"
+            android:label="@string/app_name"/>
+        <activity android:name=".hue.PHHubSetup"
             android:label="Get Name"/>
 
+        <receiver
+            android:name=".MyReceiver">
+        </receiver>
     </application>
 
 </manifest>

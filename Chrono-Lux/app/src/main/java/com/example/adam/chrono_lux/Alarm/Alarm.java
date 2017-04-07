@@ -1,9 +1,4 @@
-package com.example.adam.chrono_lux.Alarm;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+package com.example.adam.chrono_lux.alarm;
 
 /**
  * Created by adam on 19/01/17.

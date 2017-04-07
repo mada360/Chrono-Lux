@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.adam.chrono_lux.Hue.PHHomeActivity;
+import com.example.adam.chrono_lux.hue.PHHomeActivity;
 
 
 public class MainActivity extends AppCompatActivity {

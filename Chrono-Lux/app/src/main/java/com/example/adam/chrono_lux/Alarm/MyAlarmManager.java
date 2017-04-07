@@ -1,4 +1,4 @@
-package com.example.adam.chrono_lux.Alarm;
+package com.example.adam.chrono_lux.alarm;
 
 import android.util.Log;
 

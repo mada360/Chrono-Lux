@@ -1,4 +1,4 @@
-package com.example.adam.chrono_lux.Alarm;
+package com.example.adam.chrono_lux.alarm;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -11,16 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.adam.chrono_lux.Alarm.Alarm;
 import com.example.adam.chrono_lux.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -35,6 +32,7 @@ public class AlarmFragment extends Fragment {
     private CoordinatorLayout mCoordinatorLayout;
 
     private Alarm test = new Alarm("Test", true, 700);
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -79,6 +77,7 @@ public class AlarmFragment extends Fragment {
 
 
     public void addAlarm(){
+
         alarms.add(test);
         updateAlarmCount();
         Snackbar snackbar = Snackbar

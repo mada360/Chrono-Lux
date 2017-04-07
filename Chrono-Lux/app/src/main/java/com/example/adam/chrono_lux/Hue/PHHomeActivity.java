@@ -1,4 +1,4 @@
-package com.example.adam.chrono_lux.Hue;
+package com.example.adam.chrono_lux.hue;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ import android.widget.ListView;
 
 import com.example.adam.chrono_lux.MyApplicationActivity;
 import com.example.adam.chrono_lux.R;
-import com.example.adam.chrono_lux.Hue.data.AccessPointListAdapter;
-import com.example.adam.chrono_lux.Hue.data.HueSharedPreferences;
+import com.example.adam.chrono_lux.hue.data.AccessPointListAdapter;
+import com.example.adam.chrono_lux.hue.data.HueSharedPreferences;
 import com.philips.lighting.hue.sdk.PHAccessPoint;
 import com.philips.lighting.hue.sdk.PHBridgeSearchManager;
 import com.philips.lighting.hue.sdk.PHHueSDK;

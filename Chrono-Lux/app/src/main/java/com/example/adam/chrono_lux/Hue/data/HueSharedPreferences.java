@@ -1,4 +1,4 @@
-package com.example.adam.chrono_lux.Hue.data;
+package com.example.adam.chrono_lux.hue.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;

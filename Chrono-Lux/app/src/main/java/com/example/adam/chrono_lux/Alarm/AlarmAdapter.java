@@ -1,4 +1,4 @@
-package com.example.adam.chrono_lux.Alarm;
+package com.example.adam.chrono_lux.alarm;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import com.example.adam.chrono_lux.R;
 
