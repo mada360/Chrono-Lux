@@ -8,15 +8,22 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.adam.chrono_lux.hue.PHHomeActivity;
+import com.example.adam.chrono_lux.hue.PHLightManager;
+import com.philips.lighting.model.PHBridge;
+import com.philips.lighting.model.PHLight;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private CoordinatorLayout mCoordinatorLayout;
+    private String tabName;
+
+    private final String TAG = "Main";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +43,23 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Alarm"));
         tabLayout.addTab(tabLayout.newTab().setText("Light"));
-        tabLayout.addTab(tabLayout.newTab().setText("Weather"));
+        tabLayout.addTab(tabLayout.newTab().setText("Test"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+        tabName = (String) tabLayout.getTabAt(0).getText();
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                tabName = (String) tab.getText();
+
                 viewPager.setCurrentItem(tab.getPosition());
+                Log.i(TAG, tabName);
             }
 
             @Override
@@ -70,11 +83,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SetupHub(MenuItem item) {
-        Intent hubSetupIntent = new Intent(this,PHHomeActivity.class);
-        final int result = 1;
-
-        startActivityForResult(hubSetupIntent,result);
+        hubConfigure();
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -83,6 +94,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void settings(MenuItem item) {
-        Snackbar.make(mCoordinatorLayout, "I am just an egg", Snackbar.LENGTH_LONG).show();
+
+        CoordinatorLayout layout;
+
+        Log.i(TAG, tabName);
+        switch (tabName) {
+            case "Light":
+                layout = (CoordinatorLayout) findViewById(R.id.alarm_view);
+                break;
+            case "Test":
+                layout = (CoordinatorLayout) findViewById(R.id.test_view);
+                break;
+            default:
+                layout = mCoordinatorLayout;
+                break;
+        }
+
+        Snackbar.make(layout, "I am just an egg", Snackbar.LENGTH_LONG).show();
     }
+
+    private void hubConfigure(){
+        Intent hubSetupIntent = new Intent(this,PHHomeActivity.class);
+        final int result = 1;
+
+        startActivityForResult(hubSetupIntent,result);
+    }
+
+
 }

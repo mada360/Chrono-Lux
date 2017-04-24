@@ -6,17 +6,34 @@ package com.example.adam.chrono_lux.alarm;
 
 public class Alarm {
 
-    private int time;
+    private long id;
+    private int hour;
+    private int minute;
     private String label;
     private boolean set;
 
-    public Alarm() {
+    public long getId() {
+        return id;
     }
 
-    public Alarm(String label, boolean set, int time) {
-        this.label = label;
-        this.set = set;
-        this.time = time;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
     }
 
     public String getLabel() {
@@ -32,14 +49,20 @@ public class Alarm {
     }
 
     public void setSet(boolean set) {
+
         this.set = set;
     }
 
-    public int getTime() {
-        return time;
+    public Alarm(){
+
     }
 
-    public void setTime(int time) {
-        this.time = time;
+    public Alarm(long id, int alarmTimeHour, int alarmTimeMinute, String label, boolean set) {
+        this.id = id;
+        this.hour = alarmTimeHour;
+        this.minute = alarmTimeMinute;
+        this.label = label;
+        this.set = set;
     }
 }
+

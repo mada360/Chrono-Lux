@@ -28,12 +28,12 @@ public class HueSharedPreferences {
     private HueSharedPreferences(Context appContext) {
         mSharedPreferences = appContext.getSharedPreferences(HUE_SHARED_PREFERENCES_STORE, 0); // 0 - for private mode
         mSharedPreferencesEditor = mSharedPreferences.edit();
+        mSharedPreferencesEditor.apply();
     }
 
 
     public String getUsername() {
-        String username = mSharedPreferences.getString(LAST_CONNECTED_USERNAME, "");
-        return username;
+        return mSharedPreferences.getString(LAST_CONNECTED_USERNAME, "");
     }
 
     public boolean setUsername(String username) {

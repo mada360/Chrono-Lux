@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/light_view">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+
+
+        <LinearLayout
+            android:id="@+id/no_hub_found_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_margin="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="@string/hub_not_set_up_title_txt"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_margin="@dimen/activity_vertical_margin"/>
+
+            <ImageView
+                android:id="@+id/hub_setup_image"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_pushlink_bridgev2"
+                android:contentDescription="@string/hub_setup_image"/>
+
+            <TextView
+                android:id="@+id/hub_setup_prompt_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/to_use_lighting_options_please_press_the_button_below_to_proceed_with_hub_configuration"
+                android:gravity="center"
+                android:layout_margin="40dp"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/hub_setup_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hub_set_up"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/activity_vertical_margin" />
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/light_list"/>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

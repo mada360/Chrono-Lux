@@ -26,4 +26,9 @@
     <string name="this_is_how_many">This is how many</string>
     <string name="off_txt">OFF</string>
     <string name="on_txt">ON</string>
+    <string name="alarm_set_txt">Alarm Set For:</string>
+    <string name="number_of_alarms_txt">Number of lights is:</string>
+    <string name="to_use_lighting_options_please_press_the_button_below_to_proceed_with_hub_configuration">To use lighting options, please press the button below to proceed with hub configuration.</string>
+    <string name="hub_setup_image">Hub setup image</string>
+    <string name="hub_not_set_up_title_txt">Hub Not Set-up</string>
 </resources>

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.adam.chrono_lux.alarm.AlarmFragment;
+import com.example.adam.chrono_lux.light.LightFragment;
 import com.example.adam.chrono_lux.test.TestFragment;
 
 /**
@@ -26,10 +27,10 @@ public class PagerAdapter extends FragmentPagerAdapter { int mNumOfTabs;
                 AlarmFragment alarmTab = new AlarmFragment();
                 return alarmTab;
             case 1:
-                TestFragment tab2 = new TestFragment();
-                return tab2;
+                LightFragment lightTab = new LightFragment();
+                return lightTab;
             case 2:
-                AlarmFragment tab3 = new AlarmFragment();
+                TestFragment tab3 = new TestFragment();
                 return tab3;
             default:
                 return null;

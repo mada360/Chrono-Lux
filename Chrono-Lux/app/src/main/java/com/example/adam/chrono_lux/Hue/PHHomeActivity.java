@@ -3,7 +3,6 @@ package com.example.adam.chrono_lux.hue;
 import java.util.List;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.example.adam.chrono_lux.MyApplicationActivity;
+import com.example.adam.chrono_lux.HueApplicationActivity;
 import com.example.adam.chrono_lux.R;
 import com.example.adam.chrono_lux.hue.data.AccessPointListAdapter;
 import com.example.adam.chrono_lux.hue.data.HueSharedPreferences;
@@ -34,7 +33,7 @@ import com.philips.lighting.model.PHHueParsingError;
  * The last connected Bridge IP Address and Username are stored in SharedPreferences.
  *
  * For subsequent usage the app automatically connects to the last connected bridge.
- * When connected the MyApplicationActivity Activity is started.  This is where you should start implementing your Hue App!  Have fun!
+ * When connected the HueApplicationActivity Activity is started.  This is where you should start implementing your Hue App!  Have fun!
  *
  * For explanation on key concepts visit: https://github.com/PhilipsHue/PhilipsHueSDK-Java-MultiPlatform-Android
  *
@@ -43,7 +42,7 @@ import com.philips.lighting.model.PHHueParsingError;
 public class PHHomeActivity extends AppCompatActivity implements OnItemClickListener {
 
     private PHHueSDK phHueSDK;
-    public static final String TAG = "QuickStart";
+    public static final String TAG = "PHHomeactivity";
     private HueSharedPreferences prefs;
     private AccessPointListAdapter adapter;
 
@@ -58,7 +57,7 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
         phHueSDK = PHHueSDK.create();
 
         // Set the Device Name (name of your app). This will be stored in your bridge whitelist entry.
-        phHueSDK.setAppName("QuickStartApp");
+        phHueSDK.setAppName("Chrono-Lux");
         phHueSDK.setDeviceName(android.os.Build.MODEL);
 
         // Register the PHSDKListener to receive callbacks from the bridge.
@@ -108,7 +107,7 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
             Log.w(TAG, "Access Points Found. " + accessPoint.size());
 
             PHWizardAlertDialog.getInstance().closeProgressDialog();
-            if (accessPoint != null && accessPoint.size() > 0) {
+            if (accessPoint.size() > 0) {
                 phHueSDK.getAccessPointsFound().clear();
                 phHueSDK.getAccessPointsFound().addAll(accessPoint);
 
@@ -276,11 +275,9 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
 
     // Starting the main activity this way, prevents the PushLink Activity being shown when pressing the back button.
     public void startMainActivity() {
-        Intent intent = new Intent(getApplicationContext(), MyApplicationActivity.class);
+        Intent intent = new Intent(getApplicationContext(), HueApplicationActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            intent.addFlags(0x8000); // equal to Intent.FLAG_ACTIVITY_CLEAR_TASK which is only available from API level 11
         startActivity(intent);
     }
 
