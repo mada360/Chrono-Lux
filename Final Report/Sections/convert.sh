@@ -9,7 +9,7 @@
 #
 # By default this will keep the original .md file
 
-for f in *.md; do aspell check $f; done
+for f in *.md; do aspell check --lang=en_GB --add-tex-command="cite op" --add-tex-command="citep op" --add-tex-command="citet op" --add-tex-command="parencite op" $f; done
 
 FILES=*.md
 for f in $FILES
@@ -17,7 +17,7 @@ do
   # extension="${f##*.}"
   filename="${f%.*}"
   echo "Converting $f to $filename.tex"
-  `pandoc $f -t latex -o ../Report/$filename.tex`
+  `pandoc $f -t latex --listings -o ../Report/$filename.tex`
   # uncomment this line to delete the source file.
   # rm $f
 done

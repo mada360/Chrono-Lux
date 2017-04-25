@@ -5,8 +5,17 @@ an assessment of the progress you made, problems encountered, their solutions an
 
 ## Problems Encountered
 
-### Solutions
+### Alarm creation
+
+#### Solution
+
+
+
+
+### Storing Objects
+
+#### Solution
+
+
 
 ## Lessons Learned
-
-

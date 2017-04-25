@@ -50,6 +50,35 @@
 \setlength{\parskip}{1em}
 
 \usepackage{hyperref}
+\usepackage{pdflscape}
+
+% Contents of listings-setup.tex
+\usepackage{framed, xcolor}
+\usepackage{listings}
+\usepackage{framed}
+
+\lstset{
+    basicstyle=\ttfamily,
+    numbers=left,
+    keywordstyle=\color[rgb]{0.13,0.29,0.53}\bfseries,
+    stringstyle=\color[rgb]{0.31,0.60,0.02},
+    commentstyle=\color[rgb]{0.56,0.35,0.01}\itshape,
+    numberstyle=\footnotesize,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color[RGB]{248,248,248},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=true,
+    breakautoindent=true,
+    escapeinside={\%*}{*)},
+    linewidth=\textwidth,
+    basewidth=0.5em,
+}
 
 %References
 
@@ -137,7 +166,9 @@ citestyle=authoryear
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
 \emph{Author:}\\
-Adam \textsc{Worley} % Your name
+Adam \textsc{Worley}\\ % Your name
+\emph{Student Number:}\\
+13842206
 \end{flushleft}
 \end{minipage}
 ~
@@ -147,7 +178,6 @@ Adam \textsc{Worley} % Your name
 Marcus \textsc{Winter} % Supervisor's Name (Manos)
 \end{flushright}
 \end{minipage}\\[3cm]
-
 % If you don't want a supervisor, uncomment the two lines below and remove the section above
 %\Large \emph{Author:}\\
 %John \textsc{Smith}\\[2cm] % Your name
@@ -172,17 +202,19 @@ Marcus \textsc{Winter} % Supervisor's Name (Manos)
 \vfill % Fill the rest of the page with whitespace
 
 \end{titlepage}
+
 \tableofcontents
 \pagebreak
 
 \input{Methodology}
 \input{DevelopmentStages}
-\input{Accomplishments}
+\input{Specification}
 \input{Research}
-\input{SuccessFailure}
 \input{Progress}
-\input{Extensions}
+\input{Accomplishments}
+\input{SuccessFailure}
 \input{OriginalPlan}
+\input{Extensions}
 \input{Evaluation}
 
 \pagebreak
