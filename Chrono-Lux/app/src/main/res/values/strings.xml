@@ -11,8 +11,8 @@
     <string name="title_error">Error</string>
     <string name="txt_click_random_button">Random</string>
     <string name="btn_random">Random Btn</string>
-    <string name="press_pushlink_button">Press the button</string>
-    <string name="txt_pushlink">Pushlink</string>
+    <string name="press_pushlink_button">Press the push-button to connect.</string>
+    <string name="txt_pushlink">Push-link</string>
     <string name="btn_ok">OK</string>
     <string name="txt_select_smartbridge">Select smartbridge</string>
     <string name="no_bridge">No bridge found</string>

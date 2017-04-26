@@ -10,15 +10,26 @@ The first stage of development is analysis, failing to analyse the problem or ob
 Analysis often requires the assessment of the problem or product to be developed and rendering it down into more fundamental pieces such as how to implement a RESTful API or store any data required.
 During this stage it is common to perform competitor analysis by finding similar existing solutions to challenges that may be faced and to implement improvements over the competition and produce something objectively better to improve usability, experience, performance and any combination of aspects that can be deemed desirable.
 
-### Problem Analysis
-
-
-
 ### Competitors
 
 #### [Sleep as Android](http://sleep.urbandroid.org/)
 
 This is the most feature packed alarm app available on Android that I could find.
+
+##### Appearance
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.5,keepaspectratio]{Images/sleepas.png}
+    \caption{Sleep as Android Screenshot}
+  \end{center}
+\end{figure}
+
+The design of the app mostly follows the material guidelines set by the Android development team with small variances in style. Overall the app looks nice however some views can become crowded with information and the number of features does make navigating the app harder than it needs to be.
+
+##### Features
+
+This app contains numerous features from the basics such as recurring alarms to features such as solving a puzzle or scanning a QR code to turn the alarm off. Features such as snore detection, sleep sensors and sonar detection all detect and measure a persons sleep cycle and provide statistics and graphs to assess the nights sleep and help inform the user as how to improve their sleep quality, suggesting an earlier bed time or to avoid sleeping aids and alcohol to prevent snoring.
 
 #### [Cuckuu](https://cuckuu.com/)
 
@@ -26,17 +37,43 @@ Cuckuu doesn't have the same level of integration with reminders, appointments o
 
 ##### Appearance
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.25,keepaspectratio]{Images/cuckuu.png}
+    \caption{Cuckuu App Screenshots}
+  \end{center}
+\end{figure}
+
+Cuckuu strikes a balance between Android and iOS allowing for it to be available on both platforms, this is a good choice as it allows a user to move between platforms and remain familiar with the design while maintaining a good level of OS cohesion to keep the experience consistent enough.
+
 ##### Features
+
+For Cuckuu social aspects of an alarm are the most important thing as this is the apps unique selling point. Users are able to share alarms (cuckuus) with their friends, possibly to alert them of shared events.
+
+Users can add media or links to alarms both their own and shared alarms, this provides a more visual and engaging alarm over a simple snooze and off button. Another key aspect is a level of gamification towards alarms by obtaining points for shutting of alarms quickly and providing a leader-board among friends to encourage waking quickly and avoiding the snooze button.
 
 #### [Wakie](https://wakie.com/)
 
-Wakie is very different in how it intends to wake a user up and besides being an alarm has little to what my app will consist of. Wakie does have a very interesting perms though, that a stranger from around the world will be able to call you when you would like to be woken and talk about a topic you would like to discuss.
+Wakie is very different in how it intends to wake a user up and besides being an alarm has little to what my app will consist of. Wakie does have a very interesting concept though, that a stranger from around the world will be able to call you when you would like to be woken and talk about a topic you would like to discuss.
 
 #### Appearance
+
+![Wakie App](Images/wakie.jpg)
+
 
 With a very simple and clean design this app definitely looks nice and allows itself to easily be ported into the varying mobile platforms.
 
 #### Features
+
+Since the initial analysis of this application the alarm aspects have since been removed, as such I will be writing about the app in regards to older versions that still contained the alarm functionality.
+
+Overall the app works simply, you can set an alarm and another user of the app will be connected to you through a phone call at the time the alarm is set for. The concept is to provide a more sociable and personal alarm, knowing that your alarm is a person on the other end possibly encourages the user to wake up more than a simple alarm. The app and it's functionality are free and only users of the app are connected together.
+
+### Problem Analysis
+
+Through my competitor analysis it is clear there is little competition for smart-device connected alarm applications and with the increase in smart-device popularity I feel there is a market for such an application. The problems with existing alarm applications can be attributed to their functionality, in some cases the amount of functionality can be overwhelming in the case of *Sleep as Android* I feel there are just far to many features and this produces are cluttered experience.
+
+By focusing on a small amount of features such as how Wakie focuses on an alarm with a chat, I intend to make a clean and simple app that is familiar to the material design guidelines for the Android platform to make my app blend seamlessly.
 
 ## Design
 
@@ -44,6 +81,7 @@ During the design stage the User Interface (UI) and various aspects of the code 
 
 ### Designs
 
+*TODO*
 APPENDIX?
 
 ## Development
@@ -70,8 +108,14 @@ Often testing is an ongoing aspect of the development life cycle so that as aspe
 
 ### Tests
 
+The majority of testing involved will consist of introducing functionality into the app and performing various actions to test that functionality by using it as intended and trying to break it through fringe cases and interactions that are likely to be less common such as rapidly editing a text input or using input that is likely to be uncommon such as number in place of text.
+
+Further testing in the later stages of development will use others to use the app and to provide feedback for their experience. It is very difficult to test all cases as issues with UI or networking can be intermittent and as such development should involve writing good code and be less reliant on tests to indicate when something isn't working.
+
 ## Feedback
 
 Feedback is crucial for assessing the success of a project, by obtaining feedback from testers or trial users changes can be made to improve the experience of the application. Feedback can be obtained during development by having people use certain aspects of the application as it's being developed. If during feedback multiple users raise complaints about the same aspects this is a key indicator to change that aspect of the application before full deployment to ensure a higher level of polish and maintain a higher level of respect and image.  
 
 ### User Trials
+
+As mentioned later stages of testing will involve others to test my app, through testing I can obtain feedback for the design, usability and highlight issues that I may not have accounted for in my development and testing.

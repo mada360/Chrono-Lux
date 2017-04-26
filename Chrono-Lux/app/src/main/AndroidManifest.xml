@@ -37,7 +37,6 @@
             android:label="@string/txt_select_bridges"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".hue.PHPushlinkActivity"
-            android:theme="@android:style/Theme.Dialog"
             android:label="@string/app_name"/>
         <activity android:name=".hue.PHHomeActivity"
             android:label="@string/app_name"

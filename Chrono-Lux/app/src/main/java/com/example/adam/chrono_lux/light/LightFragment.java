@@ -15,11 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.adam.chrono_lux.HueApplicationActivity;
 import com.example.adam.chrono_lux.R;
 import com.example.adam.chrono_lux.hue.PHHomeActivity;
 import com.example.adam.chrono_lux.hue.PHLightManager;
 import com.example.adam.chrono_lux.hue.PHPushlinkActivity;
 import com.example.adam.chrono_lux.hue.PHWizardAlertDialog;
+import com.example.adam.chrono_lux.hue.data.HueSharedPreferences;
+import com.philips.lighting.hue.sdk.PHAccessPoint;
 import com.philips.lighting.hue.sdk.PHHueSDK;
 import com.philips.lighting.model.PHBridge;
 
@@ -36,6 +39,8 @@ public class LightFragment extends Fragment {
 
     private ListAdapter lightAdapter;
     private ListView lightListView;
+    private HueSharedPreferences prefs;
+
 
     private final String TAG = "LightFragment";
 
@@ -53,14 +58,18 @@ public class LightFragment extends Fragment {
             lightManager = new PHLightManager();
         }
 
+
+
+        prefs = HueSharedPreferences.getInstance(getContext());
+
+        String lastIpAddress   = prefs.getLastConnectedIPAddress();
+        String lastUsername    = prefs.getUsername();
+
+
         // Ensure bride is connected
-        if (lightManager.bridgeConnected()) {
+        if (lastIpAddress !=null && !lastIpAddress.equals("") && lightManager.bridgeConnected()) {
 
             noHubLayout.setVisibility(View.GONE);
-
-            Log.i(TAG, "Get lights");
-            Log.i(TAG, String.valueOf(lightManager.bridgeConnected()));
-
 
             lightAdapter = new LightAdapter(getActivity().getApplicationContext(), lightManager.getLights());
 

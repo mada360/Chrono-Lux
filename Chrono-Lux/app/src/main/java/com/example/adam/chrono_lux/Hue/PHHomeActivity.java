@@ -4,7 +4,9 @@ import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +16,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.example.adam.chrono_lux.HueApplicationActivity;
+import com.example.adam.chrono_lux.MainActivity;
 import com.example.adam.chrono_lux.R;
 import com.example.adam.chrono_lux.hue.data.AccessPointListAdapter;
 import com.example.adam.chrono_lux.hue.data.HueSharedPreferences;
@@ -46,11 +49,26 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
     private HueSharedPreferences prefs;
     private AccessPointListAdapter adapter;
 
+    private CoordinatorLayout mCoordinatorLayout;
+
     private boolean lastSearchWasIPScan = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+
+        // Find the toolbar view inside the activity layout
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        if(toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+
+
+
         setContentView(R.layout.bridge_list_linear);
 
         // Gets an instance of the Hue SDK.
@@ -71,6 +89,12 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
 
         // Try to automatically connect to the last known bridge.  For first time use this will be empty so a bridge search is automatically started.
         prefs = HueSharedPreferences.getInstance(getApplicationContext());
+
+        connectToHub();
+    }
+
+    public void connectToHub(){
+
         String lastIpAddress   = prefs.getLastConnectedIPAddress();
         String lastUsername    = prefs.getUsername();
 
@@ -85,9 +109,11 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
                 phHueSDK.connect(lastAccessPoint);
             }
         }
-        else {  // First time use, so perform a bridge search.
+        else {  // First time use, to perform a bridge search.
             doBridgeSearch();
         }
+
+
     }
 
     @Override
@@ -275,7 +301,7 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
 
     // Starting the main activity this way, prevents the PushLink Activity being shown when pressing the back button.
     public void startMainActivity() {
-        Intent intent = new Intent(getApplicationContext(), HueApplicationActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
