@@ -2,7 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/coordinatorLayout"
+    android:id="@+id/hub_coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,25 +10,23 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:theme="@android:style/Theme.Dialog"
         android:id="@+id/linear1"
         android:minWidth="300dp" >
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/hub_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            app:popupTheme="@style/ThemeOverlay.AppCompat"/>
 
         <ListView
             android:id="@+id/bridge_list"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:cacheColorHint="#00000000"
             android:focusable="true"
             android:choiceMode="singleChoice"
             android:dividerHeight="3sp"
@@ -38,18 +36,25 @@
         </ListView>
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/select_bridge_prompt_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
             android:layout_marginTop="15dp"
             android:gravity="center_horizontal"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:text="@string/txt_select_smartbridge"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:maxLines="1" />
+
+        <Button
+            android:id="@+id/bridge_search_btn"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/search_for_bridge"
+            android:onClick="doBridgeSearchBtn"/>
 
 
 

@@ -7,9 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.example.adam.chrono_lux.alarm.Alarm;
 import com.example.adam.chrono_lux.alarm.MyAlarmManager;
 import com.example.adam.chrono_lux.hue.PHLightManager;
 import com.philips.lighting.hue.listener.PHLightListener;
@@ -31,17 +33,36 @@ import java.util.Random;
 public class MyReceiver extends BroadcastReceiver {
 
     private PHLightManager lightManager = new PHLightManager();
-    private final String TAG = "reciever";
+
+    private final String TAG = "receiver";
 
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        createNotification(context, "Times Up", "Light", "Alert");
+        MyAlarmManager myAlarmManager = new MyAlarmManager(context);
+
+        Bundle extras = intent.getExtras();
+
+        if (extras != null) {
+            int alarmID = extras.getInt("alarmID");
+            Log.i(TAG, String.valueOf(alarmID));
+
+            Alarm alarm = myAlarmManager.getAlarmByID(alarmID);
+
+            if(alarm.isSet()){
+                String label = alarm.getLabel();
+                createNotification(context, "Alarm", "Alarm " + label, "Alert");
+            }else{
+                Log.i(TAG, "Alarm not set");
+            }
+        }else{
+            Log.i(TAG, "No extras");
+        }
 
     }
 
-    private void createNotification(Context context, String msg, String msgTxt, String alert) {
+    private void createNotification(Context context, String title, String msgTxt, String alert) {
 
         //getActivity(Context context, int requestCode, Intent intent, int flags)
         PendingIntent notificationIntent = PendingIntent.getActivity(context, 0 , new Intent(context, MainActivity.class), 0);
@@ -49,7 +70,7 @@ public class MyReceiver extends BroadcastReceiver {
 
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
-                .setContentTitle(msg)
+                .setContentTitle(title)
                 .setContentText(msgTxt)
                 .setTicker(alert)
                 .setSmallIcon(R.drawable.ic_alarm_add_white_48dp);

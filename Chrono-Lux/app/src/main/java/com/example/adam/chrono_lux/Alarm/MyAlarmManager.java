@@ -32,6 +32,7 @@ public class MyAlarmManager {
         dataSource.open();
         dataSource.createAlarm(alarm);
 
+
     }
 
     void updateAlarmLabel(int position, String newLabel){
@@ -39,6 +40,7 @@ public class MyAlarmManager {
         Alarm alarmToUpdate = getAlarmAtPosition(position);
 
         dataSource.updateAlarmLabel(alarmToUpdate.getId(), newLabel);
+
     }
 
     void setAlarm(int position, boolean toSet){
@@ -46,6 +48,7 @@ public class MyAlarmManager {
         Alarm alarmToUpdate = getAlarmAtPosition(position);
 
         dataSource.updateAlarmSet(alarmToUpdate.getId(), toSet);
+
     }
 
     void removeAlarm(int id){
@@ -61,17 +64,29 @@ public class MyAlarmManager {
 
         if(dataSource != null){
             dataSource.open();
+
             return dataSource.getAlarms();
         }
 
         return null;
     }
 
-    Alarm getAlarmAtPosition(int position){
-        dataSource.open();
-        ArrayList<Alarm> alarms = dataSource.getAlarms();
+    public Alarm getAlarmAtPosition(int position){
+
+        ArrayList<Alarm> alarms = getAlarms();
 
         return alarms.get(position);
     }
 
+    public Alarm getAlarmByID(int id){
+
+        ArrayList<Alarm> alarms = getAlarms();
+
+        for (Alarm alarm: alarms ) {
+            if(alarm.getId() == id){
+                return alarm;
+            }
+        }
+        return null;
+    }
 }

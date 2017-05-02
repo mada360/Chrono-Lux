@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.adam.chrono_lux.HueApplicationActivity;
@@ -49,27 +50,20 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
     private HueSharedPreferences prefs;
     private AccessPointListAdapter adapter;
 
-    private CoordinatorLayout mCoordinatorLayout;
-
     private boolean lastSearchWasIPScan = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+        setContentView(R.layout.bridge_list_linear);
 
         // Find the toolbar view inside the activity layout
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.hub_toolbar);
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
         if(toolbar != null) {
             setSupportActionBar(toolbar);
         }
-
-
-
-        setContentView(R.layout.bridge_list_linear);
 
         // Gets an instance of the Hue SDK.
         phHueSDK = PHHueSDK.create();
@@ -87,11 +81,18 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
         accessPointList.setOnItemClickListener(this);
         accessPointList.setAdapter(adapter);
 
+        if(adapter.getCount() > 0){
+
+            Button bridgeSearchBtn = (Button) findViewById(R.id.bridge_search_btn);
+            bridgeSearchBtn.setVisibility(View.GONE);
+        }
+
         // Try to automatically connect to the last known bridge.  For first time use this will be empty so a bridge search is automatically started.
         prefs = HueSharedPreferences.getInstance(getApplicationContext());
 
         connectToHub();
     }
+
 
     public void connectToHub(){
 
@@ -104,9 +105,10 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
             lastAccessPoint.setIpAddress(lastIpAddress);
             lastAccessPoint.setUsername(lastUsername);
 
-            if (!phHueSDK.isAccessPointConnected(lastAccessPoint)) {
-                PHWizardAlertDialog.getInstance().showProgressDialog(R.string.connecting, PHHomeActivity.this);
-                phHueSDK.connect(lastAccessPoint);
+            accessPointConnected(lastAccessPoint);
+
+            if (!accessPointConnected(lastAccessPoint)) {
+                connectToAccessPoint(lastAccessPoint);
             }
         }
         else {  // First time use, to perform a bridge search.
@@ -116,9 +118,17 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
 
     }
 
+    public boolean accessPointConnected(PHAccessPoint lastAccessPoint){
+        return phHueSDK.isAccessPointConnected(lastAccessPoint);
+    }
+
+    public void connectToAccessPoint(PHAccessPoint accessPoint){
+        PHWizardAlertDialog.getInstance().showProgressDialog(R.string.connecting, PHHomeActivity.this);
+        phHueSDK.connect(accessPoint);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        Log.w(TAG, "Inflating home menu");
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
@@ -143,9 +153,7 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
                         adapter.updateData(phHueSDK.getAccessPointsFound());
                     }
                 });
-
             }
-
         }
 
         @Override
@@ -307,4 +315,7 @@ public class PHHomeActivity extends AppCompatActivity implements OnItemClickList
         startActivity(intent);
     }
 
+    public void doBridgeSearchBtn(View view) {
+        doBridgeSearch();
+    }
 }

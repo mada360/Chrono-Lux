@@ -31,6 +31,7 @@ public class AlarmDataSource {
             SQLiteHelper.COLUMN_SET,
     };
 
+    // Sets up the database helper as an SQLite helper.
     public AlarmDataSource(Context context) {
         dbHelper = new SQLiteHelper(context);
     }

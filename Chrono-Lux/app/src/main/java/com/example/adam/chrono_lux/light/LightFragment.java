@@ -58,16 +58,28 @@ public class LightFragment extends Fragment {
             lightManager = new PHLightManager();
         }
 
-
-
         prefs = HueSharedPreferences.getInstance(getContext());
 
         String lastIpAddress   = prefs.getLastConnectedIPAddress();
-        String lastUsername    = prefs.getUsername();
+        String lastUsername   = prefs.getUsername();
 
+        PHAccessPoint lastAccessPoint = new PHAccessPoint();
 
-        // Ensure bride is connected
-        if (lastIpAddress !=null && !lastIpAddress.equals("") && lightManager.bridgeConnected()) {
+        // Automatically try to connect to the last connected IP Address.  For multiple bridge support a different implementation is required.
+        if (lastIpAddress != null && !lastIpAddress.equals("")) {
+
+            lastAccessPoint.setIpAddress(lastIpAddress);
+            lastAccessPoint.setUsername(lastUsername);
+
+            lightManager.accessPointConnected(lastAccessPoint);
+
+            if (!lightManager.accessPointConnected(lastAccessPoint)) {
+
+                lightManager.connectToAccessPoint(lastAccessPoint);
+            }
+        }
+
+        if (lightManager.bridgeConnected()) {
 
             noHubLayout.setVisibility(View.GONE);
 
@@ -85,6 +97,45 @@ public class LightFragment extends Fragment {
                     Snackbar.make(mCoordinatorLayout, selected, Snackbar.LENGTH_SHORT).show();
                 }
             });
+        } else {
+                Button setupBtn = (Button) view.findViewById(R.id.hub_setup_btn);
+
+                ListView lightList = (ListView) view.findViewById(R.id.light_list);
+
+                lightList.setVisibility(View.GONE);
+
+                noHubLayout.setVisibility(View.VISIBLE);
+
+                setupBtn.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+        setupHub();
+        }
+        });
+        }
+
+        // Ensure bride is connected
+         /*          if (!lightManager.accessPointConnected(lastAccessPoint)) {
+
+                lightManager.connectToAccessPoint(lastAccessPoint);
+
+                noHubLayout.setVisibility(View.GONE);
+
+                lightAdapter = new LightAdapter(getActivity().getApplicationContext(), lightManager.getLights());
+
+                lightListView = (ListView) view.findViewById(R.id.light_list);
+                lightListView.setAdapter(lightAdapter);
+
+                lightListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        Log.i(TAG, String.valueOf(position));
+
+                        String selected = "You selected " + position;
+                        Snackbar.make(mCoordinatorLayout, selected, Snackbar.LENGTH_SHORT).show();
+                    }
+                });
+            }
         }else{
 
             Button setupBtn = (Button) view.findViewById(R.id.hub_setup_btn);
@@ -102,18 +153,18 @@ public class LightFragment extends Fragment {
                 }
             });
         }
-
+*/
 
         return view;
-    }
+        }
 
-    private void setupHub() {
+private void setupHub() {
         Intent hubSetupIntent = new Intent(getActivity(),PHHomeActivity.class);
-        final int result = 1;
+final int result = 1;
 
         startActivityForResult(hubSetupIntent,result);
-    }
+        }
 
 
-}
+        }
 

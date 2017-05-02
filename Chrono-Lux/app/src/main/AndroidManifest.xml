@@ -41,8 +41,6 @@
         <activity android:name=".hue.PHHomeActivity"
             android:label="@string/app_name"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".test.BasicIntent"
-            android:label="@string/app_name"/>
         <activity android:name=".alarm.AlarmReceiverActivity"
             android:label="@string/app_name"/>
 

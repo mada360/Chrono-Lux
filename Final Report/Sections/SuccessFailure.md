@@ -3,9 +3,9 @@ assessment of the success or failure of the project as a whole.
 
 ## Successes
 
-### Using SQLlite
+### Using SQLite
 
-I had not forseen the need to use a database
+I had not foreseen the need to use a database
 
 ### Pending intents
 
@@ -13,4 +13,4 @@ I had not forseen the need to use a database
 
 ### No Adjustable alarm
 
-### Not Reaching Stretch
+### Not Reaching Stretch Goals

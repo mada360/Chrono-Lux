@@ -2,7 +2,9 @@ package com.example.adam.chrono_lux.hue;
 
 import android.util.Log;
 
+import com.example.adam.chrono_lux.R;
 import com.philips.lighting.hue.listener.PHLightListener;
+import com.philips.lighting.hue.sdk.PHAccessPoint;
 import com.philips.lighting.hue.sdk.PHHueSDK;
 import com.philips.lighting.model.PHBridge;
 import com.philips.lighting.model.PHBridgeResource;
@@ -23,6 +25,8 @@ public class PHLightManager {
     private PHHueSDK phHueSDK = PHHueSDK.create();
     private static final int MAX_BRIGHTNESS = 254;
     private PHBridge bridge = phHueSDK.getSelectedBridge();
+
+    private final String TAG = "Light Manager";
 
 
     public boolean bridgeConnected(){
@@ -54,12 +58,35 @@ public class PHLightManager {
     }
 
 
-    public void changeBulb(){
+    public void toggleLight(PHLight light){
+
+        PHLightState lightState = new PHLightState();
+
+        if(light.getLastKnownLightState().isOn()){
+            lightState.setOn(false);
+        }else{
+            lightState.setOn(true);
+        }
+
+        bridge.updateLightState(light, lightState, listener);
+    }
+
+    public void setLight(PHLight light, Boolean set){
+
+        PHLightState lightState = new PHLightState();
+
+        lightState.setOn(set);
+        bridge.updateLightState(light, lightState, listener);
 
     }
 
     public List<PHLight> getLights(){
-        return bridge.getResourceCache().getAllLights();
+        try {
+            return bridge.getResourceCache().getAllLights();
+        }catch (Exception e){
+            Log.e(TAG, e.toString());
+            return null;
+        }
     }
 
     public int lightCount(){
@@ -105,5 +132,16 @@ public class PHLightManager {
             phHueSDK.disconnect(bridge);
         }
     }
+
+    public boolean accessPointConnected(PHAccessPoint lastAccessPoint){
+        return phHueSDK.isAccessPointConnected(lastAccessPoint);
+    }
+
+    public void connectToAccessPoint(PHAccessPoint accessPoint){
+        //PHWizardAlertDialog.getInstance().showProgressDialog(R.string.connecting, PHHomeActivity.this);
+        phHueSDK.connect(accessPoint);
+    }
+
+
 
 }

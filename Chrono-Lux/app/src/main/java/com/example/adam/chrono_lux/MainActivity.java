@@ -1,21 +1,28 @@
 package com.example.adam.chrono_lux;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 import com.example.adam.chrono_lux.hue.PHHomeActivity;
-import com.example.adam.chrono_lux.hue.PHLightManager;
-import com.philips.lighting.model.PHBridge;
-import com.philips.lighting.model.PHLight;
+import com.example.adam.chrono_lux.weather.CityChanger;
+import com.example.adam.chrono_lux.weather.WeatherFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Alarm"));
         tabLayout.addTab(tabLayout.newTab().setText("Light"));
-        tabLayout.addTab(tabLayout.newTab().setText("Test"));
+        tabLayout.addTab(tabLayout.newTab().setText("Weather"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -87,30 +94,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
 
-    }
-
-    public void settings(MenuItem item) {
-
-        CoordinatorLayout layout;
-
-        Log.i(TAG, tabName);
-        switch (tabName) {
-            case "Light":
-                layout = (CoordinatorLayout) findViewById(R.id.alarm_view);
-                break;
-            case "Test":
-                layout = (CoordinatorLayout) findViewById(R.id.test_view);
-                break;
-            default:
-                layout = mCoordinatorLayout;
-                break;
-        }
-
-        Snackbar.make(layout, "I am just an egg", Snackbar.LENGTH_LONG).show();
     }
 
     private void hubConfigure(){
@@ -118,6 +107,48 @@ public class MainActivity extends AppCompatActivity {
         final int result = 1;
 
         startActivityForResult(hubSetupIntent,result);
+    }
+
+
+    public void changeCityDialog(MenuItem item) {
+        showInputDialog();
+    }
+
+    // Display the an edit text dialog to change the city for the weather fragment.
+    private void showInputDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Change city");
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+        builder.setPositiveButton("Go", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                changeCity(input.getText().toString());
+            }
+        });
+        builder.show();
+    }
+
+
+    /**
+     * Calls for the CityChanger to store a different location and to update the location
+     * displayed by the weather fragment.
+     *
+     * @param city The text input for a city/location
+     */
+    public void changeCity(String city){
+
+        WeatherFragment wf = (WeatherFragment) getSupportFragmentManager().findFragmentById(R.id.weather_view);
+
+        //TODO Handle this as currently throws a null pointer exception, should really work though.
+        try {
+            wf.changeCity(city);
+        }catch (Exception e){
+            Log.e(TAG, e.toString());
+        }
+
+        new CityChanger(this).setCity(city);
     }
 
 

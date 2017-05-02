@@ -35,7 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@drawable/ic_pushlink_bridgev2"
-                android:contentDescription="@string/hub_setup_image"/>
+                android:contentDescription="@string/hub_setup_image"
+                android:tint="#FFFFFF"/>
 
             <TextView
                 android:id="@+id/hub_setup_prompt_txt"

@@ -18,9 +18,9 @@ This is the most feature packed alarm app available on Android that I could find
 
 ##### Appearance
 
-\begin{figure}
+\begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.5,keepaspectratio]{Images/sleepas.png}
+    \includegraphics[scale=0.4,keepaspectratio]{Images/sleepas.png}
     \caption{Sleep as Android Screenshot}
   \end{center}
 \end{figure}
@@ -78,6 +78,14 @@ By focusing on a small amount of features such as how Wakie focuses on an alarm 
 ## Design
 
 During the design stage the User Interface (UI) and various aspects of the code are planned for development. By critically thinking about certain design aspects with regards to the requirements outlined from the analysis stage, designs of the software can be produced, this includes both the visual designs of the user interface and some of the software solutions that may be required such as certain tooling and frameworks that are available for development to produce more stable software faster by removing the need to produce custom solutions to aspects that have been solved and are found throughout programming.
+
+### Design Considerations
+
+The application will often be used within a low-light or dark scenario and as such I will design the application to use a dark colour scheme.
+
+A light colour scheme could be quite energising to the user and could potentially make them more alert which is not ideal before going to sleep and could extend the duration it takes to fall asleep, resulting in restlessness.
+
+It has been shown blue light in particular can affect the circadian rhythm of the body which is used to regulate sleep patterns \cite{oh2015analysis}.
 
 ### Designs
 

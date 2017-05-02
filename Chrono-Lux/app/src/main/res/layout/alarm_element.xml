@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:textSize="50sp"
-        android:fontFamily="sans-serif-light" />
+        android:fontFamily="sans-serif-light"
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/alarm_label"
@@ -22,7 +23,8 @@
         android:layout_height="match_parent"
         android:padding="10dp"
         android:gravity="center_vertical"
-        android:layout_weight="3"/>
+        android:layout_weight="3"
+        android:textColor="#FFFFFF"/>
 
 
     <Switch
