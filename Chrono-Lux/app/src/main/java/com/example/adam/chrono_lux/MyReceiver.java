@@ -62,6 +62,15 @@ public class MyReceiver extends BroadcastReceiver {
 
     }
 
+
+    /**
+     *
+     * Used for creating the notification to be displayed to the user.
+     * @param context - Is the context passed from the onRecieve method.
+     * @param title - The text to be displayed as the title of notification.
+     * @param msgTxt - The text for the body of the message.
+     * @param alert - Displayed on the lock-screen.
+     */
     private void createNotification(Context context, String title, String msgTxt, String alert) {
 
         //getActivity(Context context, int requestCode, Intent intent, int flags)

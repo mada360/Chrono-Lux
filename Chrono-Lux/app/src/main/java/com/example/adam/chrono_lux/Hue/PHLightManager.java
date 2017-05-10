@@ -23,7 +23,6 @@ import java.util.Random;
 public class PHLightManager {
 
     private PHHueSDK phHueSDK = PHHueSDK.create();
-    private static final int MAX_BRIGHTNESS = 254;
     private PHBridge bridge = phHueSDK.getSelectedBridge();
 
     private final String TAG = "Light Manager";
@@ -57,7 +56,7 @@ public class PHLightManager {
         }
     }
 
-
+    // Toggle the lights to the opposite state they're currently in
     public void toggleLight(PHLight light){
 
         PHLightState lightState = new PHLightState();
@@ -71,6 +70,7 @@ public class PHLightManager {
         bridge.updateLightState(light, lightState, listener);
     }
 
+    // Set the light to the passed boolean value
     public void setLight(PHLight light, Boolean set){
 
         PHLightState lightState = new PHLightState();
@@ -80,6 +80,7 @@ public class PHLightManager {
 
     }
 
+    // Returns the list of all connected lights
     public List<PHLight> getLights(){
         try {
             return bridge.getResourceCache().getAllLights();
@@ -89,6 +90,7 @@ public class PHLightManager {
         }
     }
 
+    // Returns the number of connected lights
     public int lightCount(){
         List<PHLight> allLights = bridge.getResourceCache().getAllLights();
         return allLights.size();

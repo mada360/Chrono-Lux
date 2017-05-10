@@ -148,6 +148,7 @@ public class AlarmFragment extends Fragment {
                         @Override
                         public void onClick(View view) {
 
+                            // Delete the last alarm added
                             deleteAlarm(myAlarmManager.getNumberOfAlarms() - 1);
 
                             Snackbar
@@ -160,6 +161,7 @@ public class AlarmFragment extends Fragment {
         }
     };
 
+    // Create the alarm for the provided time
     private void delayNotification(int alarmTimeHour, int alarmTimeMinute) {
 
         Alarm newAlarm = new Alarm(0, alarmTimeHour, alarmTimeMinute, "", true );
@@ -181,13 +183,13 @@ public class AlarmFragment extends Fragment {
         alarmManager.setRepeating(
                 AlarmManager.RTC_WAKEUP,
                 calendar.getTimeInMillis(),
-                AlarmManager.INTERVAL_DAY,
+                AlarmManager.INTERVAL_DAY, //Set the alarm to recur daily
                 PendingIntent
                         .getBroadcast(
                                 getContext(),
                                 alarmID,
                                 alertIntent,
-                                PendingIntent.FLAG_UPDATE_CURRENT
+                                PendingIntent.FLAG_UPDATE_CURRENT // If alarm exists update the intent
                         )
         );
 

@@ -17,6 +17,8 @@ public class Fetcher {
     private static final String OPEN_WEATHER_MAP_API =
             "http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric";
 
+
+    // Connect to the API URL and return json object on success
     public static JSONObject getJSON(Context context, String city){
         try {
             URL url = new URL(String.format(OPEN_WEATHER_MAP_API, city));
