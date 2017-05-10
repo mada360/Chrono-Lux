@@ -1,37 +1,37 @@
 # Further Areas of Investigation and Enhancements
 
-During this project there are areas that given time and resources would like to have investigated or developed further into.
+During this project there are areas that given time and resources would like to have investigated or developed further.
 
 ## Further Investigation
 
-There are areas that I would like to have investigated into that through requiring a restricted scope I did not a get an opportunity to investigate further into.
+The following are areas that provided more time, would have been investigated into further.
 
 ### Android Platform
 
-While developing my application for the Android platform it became clear there are plenty of libraries available for use. This can be attributed to not only being based upon Java, with Java having a large codebase and many libraries included and even more available by importing external libraries such as *Some android libraries/helpers*.
+While developing my application for the Android platform it became clear there are plenty of libraries available for use. This can be attributed to not only being based upon Java, with Java having a large code base and many libraries included and even more available by importing external libraries such as; Retrofit, that provides a type-safe REST client for Android providing mappings into a client interface using annotations, dialogplus provides the ability to display dialog items in a pleasant Lollipop styles animation, with many more available \parencite{androidlibs}.
 
 As the space of development is so large I would often conceive of a plan to resolve issues or implement functions within my application that may not have been the optimum solution. Through further experience with the platform and further time for development several solutions I implemented could have been implemented more efficiently, safer and more stable through the use of Android libraries or external libraries known to be improve development speed and code readability by addressing common Android development paradigms and styles.
 
 ### iOS and Other Platforms
 
 Though Android makes the majority of the current mobile platform, iOS is second taking around a 12.5% market share \parencite{osMarketSahre} and so should be considered when developing applications.
-It has been found that iOS users often will spend more on and within applications making the platform potentially more lucrative over others according to deatils from 2013 \parencite{appMoney}.
+It has been found that iOS users often will spend more on and within applications making the platform potentially more lucrative over others according to details from 2013 \parencite{appMoney}.
 
 iOS applications can be written in several languages such as; Swift, C++, C Objective-C and more \parencite{iosDeveloperLanguage}. Much like the Android studio integrated development environment (IDE), iOS applications can be written within Xcode; Apple's own IDE. The benefits of using the IDEs is a tool-chain useful for developing, debugging and designing applications.
 
-It would clearly be beneficial to be able to develop and application once and be able to deploy it across multiple platforms and systems. By leveraging systems such as \cite{cordova} it is possible to develop an application once and have it wrapped in a native container, this is then able to be distributed on respective platforms application store.
+It would clearly be beneficial to be able to develop an application once and be able to deploy it across multiple platforms and systems. By leveraging systems such as \cite{cordova} it is possible to develop an application once and have it wrapped in a native container, this is then able to be distributed on respective platforms application store.
 
-Cordova is able to use many native APIs available on the platforms being targeted and in doing so is able to blend with the native platform and appear like a regular app. There are APIs that are unavailable through Cordova however and so there may be a need to target a platform directly. Other benefits of buidling natively is the ability to write code at a lower level, for instance Android applications can be written in C and C++, allowing for lower level development which can be beneficial if applications are being written for lower powered devices or further performance is to be desired from the application.
+Cordova is able to use many native APIs available on the platforms being targeted and in doing so is able to blend with the native platform and appear like a regular app. There are APIs that are unavailable through Cordova however and so there may be a need to target a platform directly. Other benefits of building natively is the ability to write code at a lower level, for instance Android applications can be written in C and C++, allowing for lower level development which can be beneficial if applications are being written for lower powered devices or further performance is to be desired from the application.
 
 ### Functional Programming for Mobile Platforms
 
-#### Java 8
+Being able to leverage features available within functional programming would allow for the ability to produce safe, concise and more reasonable code. The benefits of which are numerous, allowing for code to become more modular and increasing re-use and prevent potential issues when running multi-threaded functions through the inclusion of thread-safety.
 
-#### Other languages
+Java 8 includes several features that are provided to developers to enable the use of such functional and so being able to include these within my application would be beneficial. Unfortunately Java 8 is limited to the latest version of Android and so would reduce the target market for my application. In the future however as the market moves towards the newer versions it would be possible to re-work aspects of my application to a more functional style.
 
 ## Enhancements
 
-Due to the limited timeframe to develop my application and the other projects and work undertaken throughout the year there are many aspects of my application that given the time, I would like to have implemented or improved.
+Due to the limited timeshare to develop my application and the other projects and work undertaken throughout the year there are many aspects of my application that given the time, I would like to have implemented or improved.
 
 ### Integration With Other Smart-devices
 
@@ -60,3 +60,9 @@ This focus towards improving the user experience by reducing the effort required
 ### Implement more smart-bulb functionality
 
 Currently my application allows for lights to be turned off and on however I would like to increase the functionality to match that provided by the manufacturer, this could include grouping lights, changing their names for easier identification but most essential would be the ability to adjust the brightness and hue of the lighting. I was unable to implement this before the deadline as there were other key aspects of my application that required work and refinement. Currently my application supports only Philips hue lighting systems, however the current product range for the Hue system alone covers 33 products of varying functionality and handling each in a user friendly way posed a challenge on presenting only the relevant options. By providing a simple switch to turn the light on or off however accounted for all of the products and in a way that fits within the Android platform well.
+
+## Open-Source
+
+In the future it would be beneficial to make my application open-source, by allowing others access to the source code of my application and allow for others to pull and edit my application; either to create a new fork and work on a project based upon my application or to continue developing Chrono-lux directly and improve upon the work.
+
+The alarm application itself can be improved upon, however the key interest would be in adoption of more connected devices, allowing others to adapt the application to include their own devices not yet supported and allowing improvements to the application for everyone is possibly the most desired outcome of open-source software.

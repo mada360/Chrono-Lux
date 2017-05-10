@@ -4,12 +4,12 @@ The following are some of the accomplishments within developing my application o
 
 ## The Ability to Control Lighting
 
-There are very applications available that allow for the connection to and manipulation of smart-lights from within the application. Because of my app being one of these few I feel is an accomplishment.
+There are few applications available that allow for the connection to and manipulation of smart-lights from within the application. Because of my app being one of these I feel is an accomplishment.
 
 
 ## The Application UI Design
 
-Overall I feel the look and feel of application works very well; it adheres to the Android design guidelines \parencite{androiddesign} and feels like a native application by maintaining a cohesive user experience.
+Overall I feel the look and feel of my application works very well; it adheres to the Android design guidelines \parencite{androiddesign} and feels like a native application by maintaining a cohesive user experience.
 
 ### Tab Navigation
 
@@ -29,4 +29,10 @@ It is specified within the guidelines that a snackbar should be displayed as lon
 
 ### Using the Weather Icon Font
 
-*TODO*
+The usage of the weather icon font provides multiple advantages over that of PNG, JPG or SVG graphics. Of these graphics types JPG doesn't allow for transparency and so would require a background colour to be saved, this would not only increase the storage space required to store the image, but would require the image to be edited if the background colour of the view were to be changed, making the use of a stored background difficult to manage. PNG does allow for transparency, however PNG images requires a relatively larger amount of storage space when compared with JPG.
+
+PNG and JPG are bitmap image types, meaning they store all the pixel data such as colour values and luminosity among other values as essentially a three dimensional array over the colour space. Due to the means of storage the graphics are not suitable for scaling, especially to increase the size of the graphic as this would require the need to generate data that does not exist; for example in an image that is $800 \times 800$ pixels, there would be 640,000 pixels, if the image were scaled to $1000 \times 1000$ pixels there would need to be 1,000,000 pixels and as a result 360,000 pixels need to be generated from the existing image, resulting in processing artefacts, banding or other graphical errors.
+
+SVG is a vector graphic and consists of instructions on how to draw a graphic and this is handled when the image is to be displayed. Due to this flexible drawing ability, the graphic can be generated to be as large as required with a trade off of computational time for storage, compared to bitmap images. Android is now capable of handling both types, however this has not always been the case. SVG support has been officially supported for versions above 4.4 (KitKat) with many adopting workarounds using the webview library prior to support \parencite{svgAndroid}. As a result there are many poor implementations of using SVG and the current advice provided in the Android guidelines is to generate PNG graphics from SVG files as to support older devices. When the PNG files are produced multiple sizes can be generated to support devices of varying screen sizes and in doing so requires multiple sizes of the same file to be saved, taking up more storage space.
+
+By using a TrueType Font (TTF) it is possible to gain the benefits of an SVG without the need to generate resource files or use unsupported implementations to display the graphics. Other benefits include the ability to easily colour the icons by changing the font colour, the font appears as a single file within the Android project resulting in less clutter in the project structure. Lastly the size required to store the font consisting of hundreds of icons is relatively small as it requires 98kb of storage while a single large PNG around 30kb.

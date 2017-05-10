@@ -4,7 +4,7 @@ In this section I will be assessing the progress that I made during the developm
 
 ## Early Stages
 
-The early stages of my project involved the analysis and design stages of my application. By performing my competitor analysis I was able set myself a guideline for what my app should like and a concept of how I'd like my users to interact with the app.
+The early stages of my project involved the analysis and design stages of my application. By performing my competitor analysis I was able set myself a guideline for what my app should look like and a concept of how I'd like my users to interact with the app.
 
 I decided that due to developing for Android only I was able to embrace the material guidelines fully and trying to ensure that my app would provide a very native Android experience allowing my app to blend in nicely with the rest of the stock applications on the device included with the OS.
 
@@ -18,7 +18,7 @@ The development of the application was quite a challenge for many reasons, many 
 
 ### Fragments
 
-As I would like to develop to the latest standards however I used a ViewPager with what is known as Fragments \parencite{fragment}. Fragments are like Activities in that they hold behaviour and the user interface, a Fragment however is not a stand-alone aspect of the application and requires an underlying activity to create and display the Fragment. Fragments come with many benefits; they can be re-used throughout the application and multiple fragments can be displayed within a single activity, this is often seen with communications apps where if viewed in portrait a list of messages are displayed and when a message is tapped a new view displays the full message, if both of these views are Fragments both can be displayed when the device is in landscape, displaying the list on one side and the entire message on the other.
+As I would like to develop to the latest standards however I used a ViewPager with what is known as \cite{fragment}. Fragments are like Activities in that they hold behaviour and the user interface, a Fragment however is not a stand-alone aspect of the application and requires an underlying activity to create and display the Fragment. Fragments come with many benefits; they can be re-used throughout the application and multiple fragments can be displayed within a single activity, this is often seen with communications apps where if viewed in portrait a list of messages are displayed and when a message is tapped a new view displays the full message, if both of these views are Fragments both can be displayed when the device is in landscape, displaying the list on one side and the entire message on the other.
 
 Fragments however due to being at a higher level running within an Activity do not have direct access to the application context, with the application context being the current state of the application such as the current activity or Fragment being displayed. This posed less of a challenge and more of a need to learn how to obtain the required context as in some instances simply using the `getContext()` method worked perfectly, in other instances the need to first get the application activity and to call the `getContext()` method on that instead caused a few issues when testing my application causing it to crash if the incorrect one was used.
 
@@ -33,9 +33,8 @@ The use of the Android Debug Bridge (ADB) \parencite{adb} made inspecting my app
 
 It is possible to filter this information to the application name, however even the application could often produce large amounts of log information.
 
-Another issue with the debug information is when an exception error was thrown or the application crashed there would be a very long stack trace displaying messages for core OS methods. It is possible however to produce log information using the provided Log API within Android, this API can be called using `Log.i(tag, message)`, this outputs a log message with a *tag* string that can be provided. The use of the tag allows the developer to filter log message by using the tag allowing for only the messages that developer would like to see be displayed, greatly reducing the clutter. The `Log` API can be called using different letters as follows:
+Another issue with the debug information is when an exception error was thrown or the application crashed there would be a very long stack trace displaying messages for core OS methods. It is possible however to produce log information using the provided Log API within Android, this API can be called using `Log.i(tag, message)`, this outputs a log message with a *tag* string that can be provided. The use of the tag allows the developer to filter log message by using the tag allowing for only the messages that developer would like to see be displayed, greatly reducing the clutter. The `Log` API can be called using different letters as seen in table \ref{table:logkey}.
 
-\pagebreak
 
 | Letter | Log Type |
 |--------|----------|
@@ -45,7 +44,7 @@ Another issue with the debug information is when an exception error was thrown o
 |    w   | Warning  |
 |    e   | Error    |
 
-Table: Log API Calls
+Table: Log API Calls \label{table:logkey}
 
 Verbose should not be used in a deployed application as much like debug, the log is stored, however verbose provides more details about the running application and could present a security risk. 'Debug logs are compiled in but stripped at run-time. Error, warning and info logs are always kept' \parencite{androidLog}.
 
@@ -64,25 +63,25 @@ Using the AlarmManager it is also possible to set an interval period, for my app
 
 #### Solution
 
-This is the extent of the AlarmManager class and as such it doesn't cover any other aspects of what would be regarded as an alarm such as; an alarm tone, a simple ability to toggle an alarm on/off, hold any extra details for reoccurring alarms by various days such as Monday-Friday but not weekends. Due to these limitations I was required to write my own AlarmManager class that utilised the AlarmManager and stored he extra functionality that I required.
+This is the extent of the AlarmManager class and as such it doesn't cover any other aspects of what would be regarded as an alarm such as; an alarm tone, a simple ability to toggle an alarm on/off, hold any extra details for reoccurring alarms by various days such as Monday-Friday but not weekends. Due to these limitations I was required to write my own AlarmManager class that utilised the AlarmManager and stored the extra functionality that I required.
 
 ### Time Picker dialog
 
 I used the time picker dialog included with Android to allow the users an attractive way to enter a valid time for the alarm creation.
 
-\begin{center}
-  \begin{figure}
-    \includegraphics[scale=0.20,keepaspectratio]{Images/components_pickers_time.png}
+\begin{figure}
+  \centering
+    \includegraphics[scale=0.50,keepaspectratio]{Images/components_pickers_time.png}
     \caption{Time Picker Dialog}
-  \end{figure}
-\end{center}
+\end{figure}
+
 
 
 The alarm picker has a method that listens for the confirm activity within the dialog and from here I am able to call `delayNotification(hourOfDay, minute);` that takes the time selected within the dialog and create the alarm using my alarm manager. Due to the time picker dialog method being of a void return time I was unable to obtain the time chosen from outside of the method, this restricted how I could utilise the time picker as it required the need to create the alarm at the same time making adjusting the time of an existing alarm difficult.
 
 One option for allowing the adjustment of an existing alarm time would be have global variables for the hour and minute values set within the time picker listener; I did not like this option however due to the less predictable nature of my application caused through using global variables.
 
-An alternative to this approach would be to create a class that would be able to handle picking the time and be able to return the hour and minute values. This would be less than ideal as the time picker dialog would be created in a different class than the alarm fragment but requires the need to be bale to displayed on the UI thread and this posed certain problems.
+An alternative to this approach would be to create a class that would be able to handle picking the time and be able to return the hour and minute values. This would be less than ideal as the time picker dialog would be created in a different class than the alarm fragment but requires the need to be able to displayed on the UI thread and this posed certain problems.
 
 #### Solution
 
@@ -91,7 +90,7 @@ I feel there is still a better way to handle the time picker, due to working on 
 
 ### Handling Pending intents
 
-Within Android to be able to start a new activity or launch a different fragment is required to specify an Intent. The Intent is a fairly simple class that allows for activities to be called/started and provides a data structure that holds the activities and tasks in a back stack, this allows for the use of the back button by closing the current activity/task the app can pop the activity from the back stack and present the previous element in the stack.
+Within Android there is a need to specify an Intent to start a new activity or fragment. The Intent is a fairly simple class that allows for activities to be called/started and provides a data structure that holds the activities and tasks in a back stack, this allows for the use of the back button by closing the current activity/task the app can pop the activity from the back stack and present the previous element in the stack.
 
 A new intent is created as follows:
 
@@ -121,13 +120,13 @@ Within Android there are several methods for storing data persistently these inc
 
 Shared Preferences allows the storage of key-value pairs within storage, by storing the key-value pair data can be stored and accessed by the usage of the key. Shared preferences although simple to use has the restriction of only being able to store string values within the value of the key, as such this greatly restricts what can be stored.
 
-It is possible to store an object within the shared preferences by converting the data into a JSON object by use of an interface library. This is mostly suited towards small and simple objects as changing a stored value was involve retrieving the entire object from memory, altering the JSON associated with the change and then storing the data back as a JSON object.
+It is possible to store an object within the shared preferences by converting the data into a JSON object by use of an interface library. This is mostly suited towards small and simple objects as changing a stored value would involve retrieving the entire object from memory, altering the JSON associated with the change and then storing the data back as a JSON object.
 
 Due to these limitations it would be a poor choice for storing my Alarm objects.
 
 #### Internal/External storage
 
-Storing data to the internal and external storage is about as challenging as storing data within the shared preferences. All data stored in the internal storage can only be accessed by the application, preventing other applications or direct user access to the retrieve the data. External storage allows for the data to be accessed freely by other applications or directly by the user by browsing through the device file system.
+Storing data to the internal and external storage is about as challenging as storing data within the shared preferences. All data stored in the internal storage can only be accessed by the application, preventing other applications or direct user access to retrieve the data. External storage allows for the data to be accessed freely by other applications or directly by the user by browsing through the device file system.
 
 Both forms of storage however are better suited for media and files such as images, music or text files. Again it would be possible to store the object as a JSON object and access it much like how shared preferences would provide access and due to this comes with similar restrictions.
 

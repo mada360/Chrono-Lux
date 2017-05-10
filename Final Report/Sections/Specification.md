@@ -17,7 +17,7 @@ Developing a basic alarm	Must		The application, an alarm app is what my project 
 
 Developing a better alarm	Should		The application, a basic alarm will work but I would like this to be an alarm app that has all the features found in any alarm app such as repeat alarms, multiple alarms, etc...
 
-Smart bulb integration		Must		The application, the Smart bulb integration is a main bases of my project and so I will need to include this into my application.
+Smart bulb integration		Must		The application, the Smart bulb integration is a main basis of my project and so I will need to include this into my application.
 
 Develop for smart bulbs		Should		The practicality of demonstrating smart bulb integration could be a challenge, by setting up a test platform using an Arduino or raspberry pi would allow me more control than external APIs.
 
@@ -29,7 +29,7 @@ Text to speech				Could		The application, text to speech is a part of the Androi
 
 ### Stages
 
-It would be naïve for me to provide a detailed schedule of the activities and stages for my project, however I can identify what I will need to do and in which order as well as estimate a time frame for when I intend to begin the activity.
+It would be \mbox{na\"{i}ve} for me to provide a detailed schedule of the activities and stages for my project, however I can identify what I will need to do and in which order as well as estimate a time frame for when I intend to begin the activity.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Activity				Time Frame
@@ -48,7 +48,7 @@ A test platform 		Two weeks following the alarm development, this will take some
 
 ### Risk Analysis
 
-There are many risks present with any kind of project, I will be identifying the most relevant and predictable risks and assessing the impact that could be caused. By identifying the risks posed I can attempt to avoid and  mitigate these risks and plan for those that I can't control.
+There are many risks present with any kind of project, I will be identifying the most relevant and predictable of these and assessing the impact that could be caused. By identifying the risks posed I can attempt to avoid and  mitigate them and plan for those that I can not control.
 
 ----------------------------------------------------------------------------------------------------------
 Risks                           Impact level   Reaction                                                 
@@ -61,7 +61,7 @@ Project complexity              Medium         Avoid making it too complex, or t
 
 Scope creep                     Low            Avoid implementing features not outlined.                
 
-Communication with supervisor   Low            Mitigate by keeping in regular contact.                  
+Communication with supervisor   Low            Reduce by keeping in regular contact.                  
 ----------------------------------------------------------------------------------------------------------
 
 Table: List of risks.

@@ -1,6 +1,6 @@
 # Research
 
-There are aspects of my project that my research before and during development influenced my app from what I had initially planned.
+Aspects of my project were influenced by the research collected before and during development, resulting in changes from what was originally planned.
 
 ## Philips Hue API
 
@@ -46,7 +46,7 @@ Many human senses are based on a logarithmic scale, this is to say we are far mo
 
 The same applies to sight, it is more important to distinguish details in low light such as that from the moon compared to the light change of daylight at varying times of the day. We do this to normalise our senses to best suit our environment.
 
-This kind of stimulus perception is defined as the just-noticeable difference (JND). Firs summarised by Ernst Weber in 1834 his equation was called Weber's Law and simply stated that response intensity increases as stimulus intensity increases \parencite[p. 1613-1615]{salkind2010encyclopedia}. Further refined by Gustav Fechner who proposed the use a constant to provide a curve to the stimulus/perception relationship. Fechners' law was a much better fit, however some stimulus did not fit well, such as that of electric shock.
+This kind of stimulus perception is defined as the just-noticeable difference (JND). Firs summarised by Ernst Weber in 1834 his equation was called Weber's Law and simply stated that response intensity increases as stimulus intensity increases \parencite[p. 1613-1615]{salkind2010encyclopedia}. Further refined by Gustav Fechner who proposed the use of a constant to provide a curve to the stimulus/perception relationship. Fechners' law was a much better fit, however some stimulus did not fit well, such as that of electric shock.
 
 Most recently in the 60's an American psychologist S. S. Stevens produced a formula that worked for all forms of stimulus, even for electric shocks \parencite{stevens1957psychophysical}. He proposed an exponential function raising the data to a power rather than using a simple constant. This essentially stated that to get a linear increase in perception of various stimuli, the stimulus would need to increase in an exponential form.
 

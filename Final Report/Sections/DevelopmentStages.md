@@ -12,6 +12,8 @@ During this stage it is common to perform competitor analysis by finding similar
 
 ### Competitors
 
+In this section three competitor apps will be investigated and evaluated by the functionality and appearance.
+
 #### [Sleep as Android](http://sleep.urbandroid.org/)
 
 This is the most feature packed alarm app available on Android that I could find.
@@ -20,7 +22,7 @@ This is the most feature packed alarm app available on Android that I could find
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.4,keepaspectratio]{Images/sleepas.png}
+    \includegraphics[scale=0.3,keepaspectratio]{Images/sleepas.png}
     \caption{Sleep as Android Screenshot}
   \end{center}
 \end{figure}
@@ -29,7 +31,7 @@ The design of the app mostly follows the material guidelines set by the Android 
 
 ##### Features
 
-This app contains numerous features from the basics such as recurring alarms to features such as solving a puzzle or scanning a QR code to turn the alarm off. Features such as snore detection, sleep sensors and sonar detection all detect and measure a persons sleep cycle and provide statistics and graphs to assess the nights sleep and help inform the user as how to improve their sleep quality, suggesting an earlier bed time or to avoid sleeping aids and alcohol to prevent snoring.
+This app contains numerous features from the basics such as recurring alarms to features such as solving a puzzle or scanning a QR code to turn the alarm off. Features such as snore detection, sleep sensors and sonar detection all detect and measure a persons sleep cycle and provide statistics and graphs to assess the nights sleep and help inform the user how to improve their sleep quality, suggesting an earlier bed time or to avoid sleeping aids and alcohol to prevent snoring.
 
 #### [Cuckuu](https://cuckuu.com/)
 
@@ -50,7 +52,7 @@ Cuckuu strikes a balance between Android and iOS allowing for it to be available
 
 For Cuckuu social aspects of an alarm are the most important thing as this is the apps unique selling point. Users are able to share alarms (cuckuus) with their friends, possibly to alert them of shared events.
 
-Users can add media or links to alarms both their own and shared alarms, this provides a more visual and engaging alarm over a simple snooze and off button. Another key aspect is a level of gamification towards alarms by obtaining points for shutting of alarms quickly and providing a leader-board among friends to encourage waking quickly and avoiding the snooze button.
+Users can add media or links to alarms both their own and shared alarms, this provides a more visual and engaging alarm over a simple snooze and off button. Another key aspect is a level of gamification towards alarms by obtaining points for shutting off alarms quickly and providing a leader-board among friends to encourage waking quickly and avoiding the snooze button.
 
 #### [Wakie](https://wakie.com/)
 
@@ -71,7 +73,7 @@ Overall the app works simply, you can set an alarm and another user of the app w
 
 ### Problem Analysis
 
-Through my competitor analysis it is clear there is little competition for smart-device connected alarm applications and with the increase in smart-device popularity I feel there is a market for such an application. The problems with existing alarm applications can be attributed to their functionality, in some cases the amount of functionality can be overwhelming in the case of *Sleep as Android* I feel there are just far to many features and this produces are cluttered experience.
+Through my competitor analysis it is clear there is little competition for smart-device connected alarm applications and with the increase in smart-device popularity I feel there is a market for such an application. The problems with existing alarm applications can be attributed to their functionality, in some cases the amount of functionality can be overwhelming in the case of *Sleep as Android* I feel there are just far to many features and this produces a cluttered experience.
 
 By focusing on a small amount of features such as how Wakie focuses on an alarm with a chat, I intend to make a clean and simple app that is familiar to the material design guidelines for the Android platform to make my app blend seamlessly.
 
@@ -89,12 +91,11 @@ It has been shown blue light in particular can affect the circadian rhythm of th
 
 ### Designs
 
-*TODO*
-APPENDIX?
+The pre-productions designs for the application can be found in appendix \ref{apdx:designs}
 
 ## Development
 
-Throughout development everything that has been produced from both the analysis and design stages are implemented through creation and utilisation of software and assets such as images and sounds to produce the goal of the project, in the instance of a mobile application this would consist of producing and application that can run on the required platforms such as Android, iOS or Windows Phone and for the application to perform the tasks required such as sending and receiving messages and displaying them to the user in the case of a communications application.
+Throughout development everything that has been produced from both the analysis and design stages are implemented through creation and utilisation of software and assets such as images and sounds to produce the goal of the project, in the instance of a mobile application this would consist of producing an application that can run on the required platforms such as Android, iOS or Windows Phone and for the application to perform the tasks required such as sending and receiving messages and displaying them to the user in the case of a communications application.
 
 ### Platform
 
@@ -106,13 +107,13 @@ With my personal phone being an Android device it is also possible to install, t
 
 Through various factors including my chosen platform, I will be targeting the latest version of the Android platform 25 also known as Nougat with support for devices as old as version 21 known as Lollipop. My decision is based on the current version distribution statistics that show over 50% of devices are on versions 21 or higher and as such my target is the majority share.
 
-Version 19 (KitKat) currently hold a 20% share which is a large portion, however these are older devices that are likely to be from poorer markets and due to the cost of smart-devices it is unlikely for there to be a high demand of support from my app for KitKat. Due to the release and support cycle provided by Google it is also likely for KitKat to be unsupported by the end of the year and as such I feel there are greater benefits to gain from the newer versions in place of using older development features and supporting deprecated code.
+Version 19 (KitKat) currently holds a 20% share which is a large portion, however these are older devices that are likely to be from poorer markets and due to the cost of smart-devices it is unlikely for there to be a high demand of support for my app from KitKat users. Due to the release and support cycle provided by Google it is also likely for KitKat to be unsupported by the end of the year and as such I feel there are greater benefits to gain from the newer versions in place of using older development features and supporting deprecated code.
 
 Due to time limitations support will only be provided in English, with the app having no alternative language support. From the restrictions and targeted versions I will be focusing on countries that have English as the native speaking language and areas of relative wealth as these are the most likely to have access to the required smart-devices.
 
 ## Testing
 
-Often testing is an ongoing aspect of the development life cycle so that as aspects of the application are developed tests and unit testing classes are produced to allow the automation of testing. Performing ongoing testing is useful to indicate that code is working correctly and if during development if the automated testing indicates any issues these can be resolved as they occur instead of during feedback or after deployment, both of which increase development cost through having to hunt down bugs and maintain the application during the life time of the application.
+Often testing is an ongoing aspect of the development life cycle so that as aspects of the application are developed tests and unit testing classes are produced to allow the automation of testing. Performing ongoing testing is useful to indicate that code is working correctly and if during development the automated testing indicates any issues these can be resolved as they occur instead of during feedback or after deployment, both of which increase development cost through having to hunt down bugs and maintain the application during the life time of the application.
 
 ### Tests
 
@@ -122,7 +123,7 @@ Further testing in the later stages of development will use others to use the ap
 
 ## Feedback
 
-Feedback is crucial for assessing the success of a project, by obtaining feedback from testers or trial users changes can be made to improve the experience of the application. Feedback can be obtained during development by having people use certain aspects of the application as it's being developed. If during feedback multiple users raise complaints about the same aspects this is a key indicator to change that aspect of the application before full deployment to ensure a higher level of polish and maintain a higher level of respect and image.  
+Feedback is crucial for assessing the success of a project, by obtaining feedback from testers or trial users changes can be made to improve the experience of the application. Feedback can be obtained during development by having people use certain aspects of the application as it's being developed. If during feedback multiple users raise complaints about the same aspects this is a key indicator that it requires changing before full deployment to ensure a higher level of polish and maintain a respectable and image.  
 
 ### User Trials
 

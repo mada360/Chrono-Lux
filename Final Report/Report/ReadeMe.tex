@@ -1,0 +1,81 @@
+%Fixes pandoc tightlist error
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\documentclass[12pt]{article}
+%\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{supertabular}
+
+\usepackage{booktabs}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\usepackage{hyperref}
+\usepackage{pdflscape}
+
+% Contents of listings-setup.tex
+\usepackage{framed, xcolor}
+\usepackage{listings}
+\usepackage{framed}
+
+\lstset{
+    basicstyle=\ttfamily,
+    numbers=left,
+    keywordstyle=\color[rgb]{0.13,0.29,0.53}\bfseries,
+    stringstyle=\color[rgb]{0.31,0.60,0.02},
+    commentstyle=\color[rgb]{0.56,0.35,0.01}\itshape,
+    numberstyle=\footnotesize,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color[RGB]{248,248,248},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=true,
+    breakautoindent=true,
+    escapeinside={\%*}{*)},
+    linewidth=\textwidth,
+    basewidth=0.5em,
+}
+
+%References
+
+\usepackage[
+backend=bibtex,
+style=numeric,
+autocite=footnote,
+citestyle=authoryear
+]{biblatex}
+
+\addbibresource{references.bib}
+
+
+
+\usepackage[british]{babel}
+\usepackage{csquotes}
+
+\usepackage{url}
+
+\usepackage{microtype}
+
+\usepackage{float}
+
+\begin{document}
+
+\section{Read Me}
+
+\input{documentation}
+
+\end{document}

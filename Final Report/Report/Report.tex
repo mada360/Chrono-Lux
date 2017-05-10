@@ -41,6 +41,9 @@
 \usepackage{amssymb}
 \usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdfpages}
+
 \usepackage{titlesec}
 \usepackage{longtable}
 \usepackage{supertabular}
@@ -100,6 +103,8 @@ citestyle=authoryear
 
 \usepackage{microtype}
 
+\usepackage{float}
+
 
 %	Below are optional commands to adjust the document.
 %----------------------------------------------------------------------------------------
@@ -109,7 +114,7 @@ citestyle=authoryear
 %\overfullrule=2cm
 %----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
+%-------------------------'s you---------------------------------------------------------------
 %	Stop hyphenation.
 %----------------------------------------------------------------------------------------
 %\widowpenalty=10000
@@ -220,6 +225,20 @@ Marcus \textsc{Winter} % Supervisor's Name (Manos)
 \pagebreak
 \printbibliography
 
-All links were last followed on the 10\textsuperscript{th} of May, 2017
+All links were last followed on the 9\textsuperscript{th} of May, 2017
+\pagebreak
 
+\appendix
+
+\input{designs}
+
+
+\section{\\Application Documentation}
+\input{documentation}
+
+
+\section{\\Activity Log}
+\input{log}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
